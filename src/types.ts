@@ -12,7 +12,7 @@ export enum StudyFieldOption {
   computational_eng = "Computational engineering",
   electrical_eng = "Electrical engineering",
   energy_tech = "Energy technology",
-  environment_tech = "Environmental technology",
+  environmental_tech = "Environmental technology",
   iem = "Industrial engineering and management",
   mechanical_eng = "Mechanical engineering",
   software_eng = "Software engineering",
