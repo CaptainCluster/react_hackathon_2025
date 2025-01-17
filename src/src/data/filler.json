@@ -1,0 +1,12 @@
+
+[
+  {
+    "id": 1,
+    "name": "Computer Networks and Internet",
+    "duration": "string",
+    "term": "Spring",
+    "teacher": "John Doe",
+    "subject": "Software engineering"
+  }
+]
+
