@@ -4,7 +4,7 @@ import Course from "../models/interfaces/Course";
 
 export async function getCourses(): Promise<AxiosResponse<Course> | FailResponse> {
   try {
-    const response = await axios.get("../data/filler.json");
+    const response = await axios.get("/src/data/filler.json");
     return response;
   } catch (error) {
     console.error(error);

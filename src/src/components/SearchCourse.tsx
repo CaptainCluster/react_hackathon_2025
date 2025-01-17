@@ -1,4 +1,9 @@
+import { getCourses } from "../api/course";
+
 const SearchCourse = () => {
+
+  const data = getCourses();
+  console.log(data.data);
 
   return (
     <>
