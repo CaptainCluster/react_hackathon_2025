@@ -1,9 +1,11 @@
 import SearchCourse from "../components/SearchCourse";
 
 const Home = () => {
-  return <>
-    <SearchCourse />
-  </>;
+  return (
+    <>
+      <SearchCourse />
+    </>
+  );
 };
 
 export default Home;

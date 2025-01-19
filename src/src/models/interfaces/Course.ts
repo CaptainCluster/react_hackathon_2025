@@ -10,4 +10,3 @@ export default interface Course {
   subject: StudyFieldOption;
   reviews: Review[];
 }
-
