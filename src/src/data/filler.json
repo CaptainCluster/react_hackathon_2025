@@ -19,6 +19,26 @@
         "date": "2025-1-19"
       }
     ]
+  },
+  {
+    "id": 2,
+    "name": "Data Structures and Algorithms",
+    "duration": "string",
+    "term": "Autumn",
+    "teacher": "Johnny Doe",
+    "subject": "Software engineering",
+    "reviews": [
+      {
+        "id": 1,
+        "name": "Anonymous",
+        "studyYear": 3,
+        "anonymity": true,
+        "feedbackTags": [],
+        "stars": 3,
+        "comment": "It is fine, I guess.",
+        "date": "2025-1-19"
+      }
+    ]
   }
 ]
 

@@ -11,9 +11,7 @@ const ReviewComment = ({ reviewData, index }: { reviewData: Review; index: numbe
       </div>
       <div>
         <p>{`Stars: ${reviewData.stars}`}</p>
-        <p>
-          {`Date: ${reviewData.date}`}
-        </p>
+        <p>{`Date: ${reviewData.date}`}</p>
       </div>
       <div>
         {reviewData.comment}
