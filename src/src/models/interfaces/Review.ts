@@ -6,5 +6,7 @@ export interface Review {
   studyYear: number | "Graduated" | "Open university";
   anonymity: boolean;
   feedbackTags?: FeedbackTags[];
+  stars: number;
   comment?: string;
+  date: Date;
 }

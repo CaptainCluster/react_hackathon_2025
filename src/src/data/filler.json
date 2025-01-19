@@ -5,14 +5,18 @@
     "duration": "2 months",
     "term": "Spring",
     "teacher": "John Doe",
-    "subject": "Software engineering"
-  },
-  {
-    "id": 2,
-    "name": "Python",
-    "duration": "2 months",
-    "term": "Fall",
-    "teacher": "John Doe",
-    "subject": "Software engineering"
+    "subject": "Software engineering",
+    "reviews": [
+      {
+        "id": 1,
+        "name": "Anonymous",
+        "studyYear": 3,
+        "anonymity": true,
+        "feedbackTags": [],
+        "stars": 1,
+        "comment": "Best course ever!",
+        "date": "2025-1-19"
+      }
+    ]
   }
 ]
