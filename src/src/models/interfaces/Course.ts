@@ -1,4 +1,5 @@
 import { StudyFieldOption } from "../enums/StudyFieldOption";
+import { Review } from "./Review";
 
 export default interface Course {
   id: number;
@@ -7,5 +8,6 @@ export default interface Course {
   term: "Spring" | "Fall" | "Anytime";
   teacher: string;
   subject: StudyFieldOption;
+  reviews: Review[];
 }
 

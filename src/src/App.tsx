@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import './App.css'
 import Error404 from "./pages/Error404";
 import Home from "./pages/Home";
+import Course from "./pages/Course";
 
 function App() {
   const queryClient = new QueryClient();
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="*" element={<Error404 />} />
+            <Route path="/course/:id" element={<Course />} />
           </Routes>
         </QueryClientProvider>
       </Router>
