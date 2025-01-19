@@ -1,7 +1,11 @@
+import CourseScore from "./CourseScore";
+
 const RateForm = () => {
   return(
     <div className="border border-black rounded-lg p-5">
       <h1 className="font-bold">Review course</h1>
+
+      <CourseScore />
 
       <label htmlFor="course-name">Course name</label>
       <input type="text" id="course-name" name="course-name"></input>
