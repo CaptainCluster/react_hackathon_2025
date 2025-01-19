@@ -10,9 +10,9 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-
-.input-form {
+input {
   border: 1px solid black;
   border-radius: 8px;
   padding: 5px;
 }
+

@@ -3,6 +3,7 @@ import findCourse from "../../utils/findCourse";
 import { useQuery } from "@tanstack/react-query";
 import { getCourses } from "../../api/course";
 import CourseInformation from "./CourseInformation";
+import RateForm from "./RateForm";
 
 const RateCourse = () => {
   const courseId: string | undefined = useParams().id;
@@ -25,17 +26,7 @@ const RateCourse = () => {
   return (
     <div>
       <CourseInformation courseData={courseData}/>
-      <div className="border border-black rounded-lg p-5">
-        <h1 className="font-bold">Review course</h1>
-        
-        <label></label>
-        <input></input>
-
-        <label></label>
-        <input></input>
-
-
-      </div>
+      <RateForm />
     </div>
   );
 }
