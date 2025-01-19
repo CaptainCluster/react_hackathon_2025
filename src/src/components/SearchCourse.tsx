@@ -28,7 +28,10 @@ const SearchCourse = () => {
       <h1>Search for a course</h1>
       <input
         value={searchParam}
-        onChange={(event) => setSearchParam(event.target.value)}>
+        onChange={(event) => {
+          setSearchParam(event.target.value)
+          console.log(event.target.value)
+        }}>
       </input>
       <ul>
         {filteredData.map((courseEntry, index) => <li key={index}>{courseEntry.name}</li> )}           
