@@ -27,6 +27,7 @@ const SearchCourse = () => {
     <>
       <h1>Search for a course</h1>
       <input
+        className="input-form"
         value={searchParam}
         onChange={(event) => {
           setSearchParam(event.target.value);
