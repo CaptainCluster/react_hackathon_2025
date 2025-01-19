@@ -18,5 +18,24 @@
         "date": "2025-1-19"
       }
     ]
+  },
+  {
+    "id": 2,
+    "name": "Introduction to Programming",
+    "duration": "2 months",
+    "term": "Fall",
+    "teacher": "Jane Doe",
+    "subject": "Software engineering",
+    "reviews": [
+      {
+        "id": 2,
+        "stars": 5,
+        "name": "Sally Loe",
+        "studyYear": 2,
+        "anonymity": false,
+        "feedbackTags": ["Engaging", "Informative"],
+        "comment": "The instructor was very clear and helpful!"
+      }
+    ]
   }
 ]
