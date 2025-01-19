@@ -1,9 +1,8 @@
-
 [
   {
     "id": 1,
     "name": "Computer Networks and Internet",
-    "duration": "string",
+    "duration": "2 months",
     "term": "Spring",
     "teacher": "John Doe",
     "subject": "Software engineering",
@@ -37,8 +36,26 @@
         "stars": 3,
         "comment": "It is fine, I guess.",
         "date": "2025-1-19"
+      }  
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Introduction to Programming",
+    "duration": "2 months",
+    "term": "Fall",
+    "teacher": "Jane Doe",
+    "subject": "Software engineering",
+    "reviews": [
+      {
+        "id": 2,
+        "stars": 5,
+        "name": "Sally Loe",
+        "studyYear": 2,
+        "anonymity": false,
+        "feedbackTags": ["Engaging", "Informative"],
+        "comment": "The instructor was very clear and helpful!"
       }
     ]
   }
 ]
-

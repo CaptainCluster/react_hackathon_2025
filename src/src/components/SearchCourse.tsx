@@ -5,7 +5,7 @@ import filterBySearchParam from "../utils/filterBySearchParam";
 
 const SearchCourse = () => {
   const [searchParam, setSearchParam] = useState("");
-  
+
   const { isLoading, isError, data, error } = useQuery({
     queryKey: ["courses"],
     queryFn: () => getCourses(),
@@ -17,7 +17,7 @@ const SearchCourse = () => {
   if (isError) {
     return <span className="text-white">Error: {error.message}</span>;
   }
-  if (data === undefined) {
+  if (data === undefined || "msg" in data) {
     return <span className="text-white">No data</span>;
   }
 
@@ -30,15 +30,17 @@ const SearchCourse = () => {
         className="input-form"
         value={searchParam}
         onChange={(event) => {
-          setSearchParam(event.target.value)
-          console.log(event.target.value)
-        }}>
-      </input>
+          setSearchParam(event.target.value);
+          console.log(event.target.value);
+        }}
+      ></input>
       <ul>
-        {filteredData.map((courseEntry, index) => <li key={index}>{courseEntry.name}</li> )}           
+        {filteredData.map((courseEntry, index) => (
+          <li key={index}>{courseEntry.name}</li>
+        ))}
       </ul>
     </>
   );
-}
+};
 
 export default SearchCourse;
