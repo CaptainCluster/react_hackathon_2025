@@ -10,6 +10,21 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+button {
+  border: 1px solid black;
+  border-radius: 8px;
+  min-width: 4vw;
+  padding: 2px;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+}
+
+button:hover {
+  border: 1px solid green;
+  background-color: rgb(194, 255, 211);
+}
+
 input {
   border: 1px solid black;
   border-radius: 8px;
