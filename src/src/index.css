@@ -31,3 +31,8 @@ input {
   padding: 5px;
 }
 
+/* Custom Classes  */
+.course-search-subject {
+  font: italic;
+  font-size: 12px;
+}

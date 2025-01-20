@@ -1,7 +1,8 @@
-import { getCourses } from "../api/course";
+import { getCourses } from "../../api/course";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import filterBySearchParam from "../utils/filterBySearchParam";
+import filterBySearchParam from "../../utils/filterBySearchParam";
+import CourseSearchResults from "./CourseSearchResults";
 
 const SearchCourse = () => {
   const [searchParam, setSearchParam] = useState("");
@@ -34,11 +35,7 @@ const SearchCourse = () => {
           console.log(event.target.value);
         }}
       ></input>
-      <ul>
-        {filteredData.map((courseEntry, index) => (
-          <li key={index}>{courseEntry.name}</li>
-        ))}
-      </ul>
+      <CourseSearchResults courseData={filteredData} />
     </>
   );
 };
