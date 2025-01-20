@@ -4,19 +4,23 @@ import { Review } from "../models/interfaces/Review";
 const ReviewComment = ({ reviewData, index }: { reviewData: Review; index: number }) => {
 
   return (
-    <div key={index}>
-      <div>
-        <p>{reviewData.name}</p>
-        <p>{reviewData.studyYear}</p>
+    <>
+      <div className="grid grid-cols-2" key={index}>
+        <div className="py-1">
+          <p className="additional-info">{reviewData.name}</p>
+          <p className="additional-info">{`Year of study: ${reviewData.studyYear}`}</p>
+        </div>
+        <div className="py-1">
+          <p className="additional-info">{`Stars: ${reviewData.stars}`}</p>
+          <p className="additional-info">{`Date: ${reviewData.date}`}</p>
+        </div>
       </div>
       <div>
-        <p>{`Stars: ${reviewData.stars}`}</p>
-        <p>{`Date: ${reviewData.date}`}</p>
+        <div className="py-1">
+          {reviewData.comment}
+        </div>
       </div>
-      <div>
-        {reviewData.comment}
-      </div>
-    </div>
+    </>
   )
 }
 

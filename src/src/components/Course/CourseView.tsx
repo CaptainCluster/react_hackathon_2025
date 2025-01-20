@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import CourseInfo from "./CourseInfo";
-import Reviews from "./Reviews";
-import { getCourses } from "../api/course";
-import findCourse from "../utils/findCourse";
+import Reviews from "../Reviews";
+import { getCourses } from "../../api/course";
+import findCourse from "../../utils/findCourse";
 
 const CourseView = ({ courseId }: { courseId: string | undefined }) => {
   const { isLoading, isError, data, error } = useQuery({
@@ -26,6 +26,12 @@ const CourseView = ({ courseId }: { courseId: string | undefined }) => {
   return (
     <>
       <CourseInfo course={course} />
+      <div 
+        className="my-2 text-center p-2 border border-gray-200 rounded-lg hover:border-blue-200 cursor-pointer"
+        onClick={() => window.location.href = `/rate/${courseId}`}
+      >
+        Review Course
+      </div>
       <Reviews course={course} />
     </>
   );

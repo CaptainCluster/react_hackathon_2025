@@ -1,4 +1,4 @@
-import SearchCourse from "../components/SearchCourse";
+import SearchCourse from "../components/Search/SearchCourse";
 
 const Home = () => {
   return (
