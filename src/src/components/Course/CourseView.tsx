@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import CourseInfo from "./CourseInfo";
-import Reviews from "./Reviews";
-import { getCourses } from "../api/course";
-import findCourse from "../utils/findCourse";
+import Reviews from "../Reviews";
+import { getCourses } from "../../api/course";
+import findCourse from "../../utils/findCourse";
 
 const CourseView = ({ courseId }: { courseId: string | undefined }) => {
   const { isLoading, isError, data, error } = useQuery({
