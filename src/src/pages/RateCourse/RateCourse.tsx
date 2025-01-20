@@ -24,9 +24,11 @@ const RateCourse = () => {
   const courseData = findCourse(data.data, Number(courseId));
   
   return (
-    <div>
-      <CourseInformation courseData={courseData}/>
-      <RateForm />
+    <div className="w-screen grid justify-center">
+      <div className="">
+        <CourseInformation courseData={courseData}/>
+        <RateForm />
+      </div>
     </div>
   );
 }
