@@ -1,6 +1,6 @@
 const CourseScore = () => {
   return(
-    <div className="border border-black rounded-lg p-2 w-fit">
+    <div className="border border-gray-200 rounded-lg p-2 w-fit">
       <button>1</button>
       <button>2</button>
       <button>3</button>

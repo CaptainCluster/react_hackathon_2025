@@ -5,7 +5,7 @@ const CourseInformation = ({ courseData }: { courseData: Course }) => {
 
   // TODO: Fill the descriptions for InformationLi components
   return (
-    <div className="border border-black rounded-lg p-5 m-2">
+    <div className="border border-gray-400 rounded-lg p-5 m-2">
       <h1 className="font-bold">{courseData.name.toUpperCase()}</h1>
       <ul className="justify-center">
         <InformationLi header={"Organizer"} info="To be filled"/>
