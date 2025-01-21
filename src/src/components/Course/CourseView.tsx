@@ -3,12 +3,15 @@ import CourseInfo from "./CourseInfo";
 import Reviews from "../Reviews";
 import { getCourses } from "../../api/course";
 import findCourse from "../../utils/findCourse";
+import { Button } from "@mui/joy/";
+import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 
 const CourseView = ({ courseId }: { courseId: string | undefined }) => {
   const { isLoading, isError, data, error } = useQuery({
     queryKey: ["courses"],
     queryFn: () => getCourses(),
   });
+
   if (isLoading) {
     return <span className="text-white">Loading...</span>;
   }
@@ -18,21 +21,41 @@ const CourseView = ({ courseId }: { courseId: string | undefined }) => {
   if (data === undefined || "msg" in data) {
     return <span className="text-white">No data</span>;
   }
-  const course = findCourse(data.data, Number(courseId));
-  if (course === undefined) {
+  const courseData = findCourse(data.data, Number(courseId));
+  if (courseData === undefined) {
     return <span className="text-white">No course</span>;
   }
 
   return (
     <>
-      <CourseInfo course={course} />
-      <div 
-        className="my-2 text-center p-2 border border-gray-200 rounded-lg hover:border-blue-200 cursor-pointer"
-        onClick={() => window.location.href = `/rate/${courseId}`}
-      >
-        Review Course
+      <div className="p-2">
+        <div className="flex justify-start mb-4">
+          <Button
+            sx={{
+              bgcolor: "#2C2C2C",
+            }}
+            startDecorator={<KeyboardArrowLeft />}
+            onClick={() => (window.location.href = `/`)}
+          >
+            Back
+          </Button>
+        </div>
+        <div className="grid grid-rows-2 gap-2">
+          <CourseInfo course={courseData} />
+          <Reviews course={courseData} />
+        </div>
+        <div className="flex justify-center mt-4">
+          <Button
+            size="lg"
+            sx={{
+              bgcolor: "#2C2C2C",
+            }}
+            onClick={() => (window.location.href = `/rate/${courseId}`)}
+          >
+            Review Course
+          </Button>
+        </div>
       </div>
-      <Reviews course={course} />
     </>
   );
 };
