@@ -4,6 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import { getCourses } from "../../api/course";
 import CourseInfo from "../../components/Course/CourseInfo";
 import RateForm from "./RateForm";
+import { Button } from "@mui/joy";
+import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 
 const RateCourse = () => {
   const courseId: string | undefined = useParams().id;
@@ -28,10 +30,19 @@ const RateCourse = () => {
 
   return (
     <div className="w-screen grid justify-center">
-      <div className="">
-        <CourseInfo course={courseData} />
-        <RateForm />
+      <div className="m-2">
+        <Button
+          sx={{
+            bgcolor: "#2C2C2C",
+          }}
+          startDecorator={<KeyboardArrowLeft />}
+          onClick={() => (window.location.href = `/course/${courseId}`)}
+        >
+          Back to course view
+        </Button>
       </div>
+      <CourseInfo course={courseData} />
+      <RateForm />
     </div>
   );
 };

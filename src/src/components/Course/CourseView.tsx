@@ -4,6 +4,7 @@ import Reviews from "../Reviews";
 import { getCourses } from "../../api/course";
 import findCourse from "../../utils/findCourse";
 import { Button } from "@mui/joy/";
+import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 
 const CourseView = ({ courseId }: { courseId: string | undefined }) => {
   const { isLoading, isError, data, error } = useQuery({
@@ -27,17 +28,33 @@ const CourseView = ({ courseId }: { courseId: string | undefined }) => {
 
   return (
     <>
-      <div className="grid grid-rows-2 gap-2">
-        <CourseInfo course={courseData} />
-        <Reviews course={courseData} />
-        <Button
-          sx={{
-            bgcolor: "#2C2C2C", // Ensure a consistent color
-          }}
-          onClick={() => (window.location.href = `/rate/${courseId}`)}
-        >
-          Review Course
-        </Button>
+      <div className="p-2">
+        <div className="flex justify-start mb-4">
+          <Button
+            sx={{
+              bgcolor: "#2C2C2C",
+            }}
+            startDecorator={<KeyboardArrowLeft />}
+            onClick={() => (window.location.href = `/`)}
+          >
+            Back
+          </Button>
+        </div>
+        <div className="grid grid-rows-2 gap-2">
+          <CourseInfo course={courseData} />
+          <Reviews course={courseData} />
+        </div>
+        <div className="flex justify-center mt-4">
+          <Button
+            size="lg"
+            sx={{
+              bgcolor: "#2C2C2C",
+            }}
+            onClick={() => (window.location.href = `/rate/${courseId}`)}
+          >
+            Review Course
+          </Button>
+        </div>
       </div>
     </>
   );
