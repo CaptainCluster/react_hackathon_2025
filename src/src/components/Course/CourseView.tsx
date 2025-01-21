@@ -3,12 +3,14 @@ import CourseInfo from "./CourseInfo";
 import Reviews from "../Reviews";
 import { getCourses } from "../../api/course";
 import findCourse from "../../utils/findCourse";
+import { Button } from "@mui/joy/";
 
 const CourseView = ({ courseId }: { courseId: string | undefined }) => {
   const { isLoading, isError, data, error } = useQuery({
     queryKey: ["courses"],
     queryFn: () => getCourses(),
   });
+
   if (isLoading) {
     return <span className="text-white">Loading...</span>;
   }
@@ -18,21 +20,25 @@ const CourseView = ({ courseId }: { courseId: string | undefined }) => {
   if (data === undefined || "msg" in data) {
     return <span className="text-white">No data</span>;
   }
-  const course = findCourse(data.data, Number(courseId));
-  if (course === undefined) {
+  const courseData = findCourse(data.data, Number(courseId));
+  if (courseData === undefined) {
     return <span className="text-white">No course</span>;
   }
 
   return (
     <>
-      <CourseInfo course={course} />
-      <div 
-        className="my-2 text-center p-2 border border-gray-200 rounded-lg hover:border-blue-200 cursor-pointer"
-        onClick={() => window.location.href = `/rate/${courseId}`}
-      >
-        Review Course
+      <div className="grid grid-rows-2 gap-2">
+        <CourseInfo course={courseData} />
+        <Reviews course={courseData} />
+        <Button
+          sx={{
+            bgcolor: "#2C2C2C", // Ensure a consistent color
+          }}
+          onClick={() => (window.location.href = `/rate/${courseId}`)}
+        >
+          Review Course
+        </Button>
       </div>
-      <Reviews course={course} />
     </>
   );
 };
