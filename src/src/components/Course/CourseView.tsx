@@ -26,6 +26,8 @@ const CourseView = ({ courseId }: { courseId: string | undefined }) => {
     return <span className="text-white">No course</span>;
   }
 
+  const numReviews = courseData.reviews.length;
+  const showReviews = numReviews > 0;
   return (
     <>
       <div className="p-2 pt-16 mx-2 flex flex-col items-start justify-start mb-4 gap-4">
@@ -39,10 +41,12 @@ const CourseView = ({ courseId }: { courseId: string | undefined }) => {
           Back
         </Button>
 
-        <div className="flex flex-col gap-2 max-w-3xl min-w-xl md:min-w-3xl">
+        <div className="flex flex-col gap-2 max-w-3xl min-w-3xl md:min-w-3xl">
           <CourseInfo course={courseData} />
-          <h3 className="font-bold text-xl">Reviews</h3>
-          <Reviews course={courseData} />
+          <h3 className="font-bold text-xl">
+            {showReviews ? `${numReviews} Reviews` : "No reviews"}
+          </h3>
+          {showReviews ? <Reviews course={courseData} /> : ""}
         </div>
         <div className="flex justify-center">
           <Button

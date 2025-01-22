@@ -33,7 +33,7 @@ const CourseInfo = ({ course }: { course: Course }) => {
           </div>
         </Stack>
         <div className="grid grid-rows-2">
-          <p className="additional-info">Rating component here</p>
+          <p className="additional-info">Rating summary component here</p>
           <div>
             <Card
               sx={{

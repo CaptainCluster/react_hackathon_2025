@@ -1,13 +1,16 @@
 import Course from "../models/interfaces/Course";
 
-const findCourse = (courseData: Course[], courseId: number) => {
+const findCourse = (
+  courseData: Course[],
+  courseId: number
+): Course | undefined => {
   let wantedEntry;
-  courseData.map(courseEntry => {
+  courseData.map((courseEntry) => {
     if (courseEntry.id == courseId) {
       wantedEntry = courseEntry;
     }
   });
-  return wantedEntry
-}
+  return wantedEntry;
+};
 
 export default findCourse;
