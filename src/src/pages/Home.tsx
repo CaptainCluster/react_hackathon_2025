@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import filterBySearchParam from "../utils/filterBySearchParam";
 import CourseSearchResults from "../components/Search/CourseSearchResults";
 import lutImage from "../assets/lut_image.png";
+import Header from "../components/Header";
 
 const Home = () => {
   const [searchParam, setSearchParam] = useState("");
@@ -27,8 +28,9 @@ const Home = () => {
 
   return (
     <>
+      <Header headerText="Rate my LUT courses"/>
       <div className="w-screen flex justify-center">
-        <div className="grid w-1/2 justify-center shadow shadow-black mb-6 py-16 pb-8 px-20 border border-gray-300">
+        <div className="grid w-1/2 justify-center shadow shadow-black my-6 py-16 pb-8 px-20 border border-gray-300">
           <img
             className="w-1/2 justify-self-center mb-4"
             src={lutImage}
