@@ -3,7 +3,7 @@ import Course from "../../models/interfaces/Course";
 const CourseResult = ({ index, courseEntry }: { index: number; courseEntry: Course }) => {
   return (
     <li 
-      className="grid grid-cols-3 mb-2 p-3 border border-gray-300 rounded-lg my-1 hover:border-blue-300 cursor-pointer" 
+      className="bg-white grid grid-cols-3 mb-2 p-3 border border-gray-300  my-1 hover:border-blue-300 cursor-pointer" 
       key={index}
       onClick={() => window.location.href = `/course/${courseEntry.id}`}
     >
