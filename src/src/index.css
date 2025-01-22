@@ -40,6 +40,15 @@ input {
   font-size: 12px;
 }
 
+.course-search {
+  height: 130%;
+}
+
 .additional-info {
   font-size: 12px;
 }
+
+.core-course-info {
+  margin-left: -20%;
+}
+
