@@ -42,7 +42,7 @@ const RateCourse = () => {
         </Button>
       </div>
       <CourseInfo course={courseData} />
-      <RateForm />
+      <RateForm courseID={Number(courseId)}/>
     </div>
   );
 };
