@@ -32,11 +32,71 @@
         "name": "Anonymous",
         "studyYear": 3,
         "anonymity": true,
-        "feedbackTags": [],
+        "feedbackTags": ["Challenging", "Time-Consuming"],
         "stars": 3,
-        "comment": "It is fine, I guess.",
+        "comment": "The content was challenging but rewarding to learn.",
         "date": "2025-1-19"
-      }  
+      },
+      {
+        "id": 2,
+        "name": "Anonymous",
+        "studyYear": 3,
+        "anonymity": true,
+        "feedbackTags": ["Good Examples"],
+        "stars": 4,
+        "comment": "The examples provided during lectures were very helpful.",
+        "date": "2025-1-19"
+      },
+      {
+        "id": 3,
+        "name": "Anonymous",
+        "studyYear": 3,
+        "anonymity": true,
+        "feedbackTags": ["Needs More Practice"],
+        "stars": 3,
+        "comment": "The course could use more practical exercises to apply the concepts.",
+        "date": "2025-1-19"
+      },
+      {
+        "id": 4,
+        "name": "Anonymous",
+        "studyYear": 3,
+        "anonymity": true,
+        "feedbackTags": ["Well-Organized"],
+        "stars": 4,
+        "comment": "The course was well-structured, but the assignments were a bit too difficult.",
+        "date": "2025-1-19"
+      },
+      {
+        "id": 5,
+        "name": "Anonymous",
+        "studyYear": 3,
+        "anonymity": true,
+        "feedbackTags": ["Well-Organized"],
+        "stars": 4,
+        "comment": "The course was well-structured, but the assignments were a bit too difficult.",
+        "date": "2025-1-19"
+      },
+      {
+        "id": 6,
+        "name": "Anonymous",
+        "studyYear": 3,
+        "anonymity": true,
+        "feedbackTags": ["Well-Organized"],
+        "stars": 4,
+        "comment": "The course was well-structured, but the assignments were a bit too difficult.",
+        "date": "2025-1-19"
+      },
+      {
+        "id": 7,
+        "name": "Anonymous",
+        "studyYear": 3,
+        "anonymity": true,
+        "feedbackTags": ["Well-Organized"],
+        "stars": 4,
+        "comment": "The course was well-structured, but the assignments were a bit too difficult.",
+        "date": "2025-1-19"
+      }
     ]
   },
   {
@@ -48,7 +108,26 @@
     "subject": "Software engineering",
     "reviews": [
       {
-        "id": 2,
+        "id": 1,
+        "stars": 5,
+        "name": "Sally Loe",
+        "studyYear": 2,
+        "anonymity": false,
+        "feedbackTags": ["Engaging", "Informative"],
+        "comment": "The instructor was very clear and helpful!"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Introduction to Programming",
+    "duration": "2 months",
+    "term": "Fall",
+    "teacher": "Jane Doe",
+    "subject": "Software engineering",
+    "reviews": [
+      {
+        "id": 1,
         "stars": 5,
         "name": "Sally Loe",
         "studyYear": 2,

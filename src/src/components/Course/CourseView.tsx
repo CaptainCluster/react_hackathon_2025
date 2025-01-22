@@ -40,8 +40,9 @@ const CourseView = ({ courseId }: { courseId: string | undefined }) => {
             Back
           </Button>
         </div>
-        <div className="grid grid-rows-2 gap-2">
+        <div className="flex flex-col gap-2">
           <CourseInfo course={courseData} />
+          <h3 className="font-bold text-xl">Reviews</h3>
           <Reviews course={courseData} />
         </div>
         <div className="flex justify-center mt-4">
