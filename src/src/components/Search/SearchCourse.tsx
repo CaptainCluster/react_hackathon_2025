@@ -27,10 +27,10 @@ const SearchCourse = () => {
   return (
     <>
       <div className="flex justify-center">
-        <div className="flex justify-center pt-20 pb-10 px-100 w-1/2 border border-gray-300">
+        <div className="flex justify-center mb-6 py-24 pb-8 px-20 w-1/2 border border-gray-300">
           <img alt="LUT logo" />
           <input
-            className="input-form"
+            className="input-form rounded-2xl"
             value={searchParam}
             onChange={(event) => {
               setSearchParam(event.target.value);

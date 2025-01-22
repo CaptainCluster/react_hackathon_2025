@@ -7,8 +7,8 @@ const CourseResult = ({ index, courseEntry }: { index: number; courseEntry: Cour
       key={index}
       onClick={() => window.location.href = `/course/${courseEntry.id}`}
     >
-      <div className="grid border border-gray-500 rounded-lg p-2">
-        <div className="flex">
+      <div className="grid grid-cols-2 border border-gray-500 rounded-lg p-2">
+        <div className="flex flex-col">
           <p>Average grade</p>
           <img alt="Star icon" />
         </div>
@@ -17,12 +17,12 @@ const CourseResult = ({ index, courseEntry }: { index: number; courseEntry: Cour
       <div className="px-3">
         <p className="font-bold">{courseEntry.name} ({courseEntry.credits} ECTS) - course_code</p>
         <div>
-          <p className="course-search-subject">Organizer: </p>
-          <p className="course-search-subject">Language: </p>
-          <p className="course-search-subject">Time: </p>
+          <p className="course-search-subject">Subject: {courseEntry.subject}</p>
+          <p className="course-search-subject">Language: {courseEntry.language}</p>
+          <p className="course-search-subject">Term: {courseEntry.term}</p>
         </div>
       </div>
-      <div className="grid border border-gray-500 rounded-lg p-2">
+      <div className="grid border border-gray-500 rounded-lg p-2 bg-zinc-500 text-white font-bold">
         <a>Read comments</a>
         <img alt="comment icon"/>
       </div>
