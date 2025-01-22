@@ -2,6 +2,8 @@
   {
     "id": 1,
     "name": "Computer Networks and Internet",
+    "credits": 3,
+    "language": "English",
     "duration": "2 months",
     "term": "Spring",
     "teacher": "John Doe",
@@ -112,6 +114,8 @@
   {
     "id": 2,
     "name": "Data Structures and Algorithms",
+    "credits": 6,
+    "language": "English",
     "duration": "string",
     "term": "Autumn",
     "teacher": "Johnny Doe",
@@ -172,6 +176,8 @@
   {
     "id": 3,
     "name": "Introduction to Programming",
+    "credits": 6,
+    "language": "English",
     "duration": "2 months",
     "term": "Fall",
     "teacher": "Jane Doe",
@@ -283,6 +289,8 @@
   {
     "id": 4,
     "name": "Advanced Databases",
+    "credits": 3,
+    "language": "English",
     "duration": "3 months",
     "term": "Spring",
     "teacher": "Alice Smith",
@@ -303,6 +311,8 @@
   {
     "id": 5,
     "name": "Machine Learning",
+    "credits": 4,
+    "language": "English",
     "duration": "4 months",
     "term": "Winter",
     "teacher": "Bob Johnson",
@@ -352,6 +362,8 @@
   {
     "id": 6,
     "name": "Artificial Intelligence",
+    "credits": 3,
+    "language": "English",
     "duration": "3 months",
     "term": "Summer",
     "teacher": "Carol White",
