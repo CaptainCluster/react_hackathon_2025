@@ -170,7 +170,7 @@
         "stars": 3,
         "comment": "Difficult but necessary.",
         "date": "2021-9-25"
-      }  
+      }
     ]
   },
   {
@@ -265,8 +265,7 @@
         "comment": "Great course for mobile enthusiasts."
       }
     ]
-    }
-  ,
+  },
   {
     "id": 4,
     "name": "Advanced Databases",
@@ -401,5 +400,16 @@
         "date": "2021-8-30"
       }
     ]
+  },
+  {
+    "id": 7,
+    "name": "Marketing",
+    "credits": 3,
+    "language": "English",
+    "duration": "3 months",
+    "term": "Fall",
+    "teacher": "Carol White",
+    "subject": "Business",
+    "reviews": []
   }
 ]

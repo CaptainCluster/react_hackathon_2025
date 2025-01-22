@@ -4,6 +4,7 @@ import { Card, CardContent, Stack, Avatar } from "@mui/joy/";
 const CourseInfo = ({ course }: { course: Course }) => {
   return (
     <Card
+      className="overflow-auto"
       variant="plain"
       sx={{
         bgcolor: "var(--lightGray)",
@@ -32,7 +33,7 @@ const CourseInfo = ({ course }: { course: Course }) => {
           </div>
         </Stack>
         <div className="grid grid-rows-2">
-          <p className="additional-info">Rating component here</p>
+          <p className="additional-info">Rating summary component here</p>
           <div>
             <Card
               sx={{
