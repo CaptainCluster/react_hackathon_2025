@@ -1,4 +1,6 @@
 import Course from "../../models/interfaces/Course";
+import averageReviewScore from "../../utils/averageReviewScore";
+import getCourseStars from "../../utils/getCourseStars";
 
 const CourseResult = ({ index, courseEntry }: { index: number; courseEntry: Course }) => {
   return (
@@ -9,7 +11,7 @@ const CourseResult = ({ index, courseEntry }: { index: number; courseEntry: Cour
     >
       <div className="grid grid-cols-2 w-4/5 border border-gray-500 rounded-lg p-2">
         <div className="flex flex-col">
-          <p>Average grade</p>
+          <p>{Number(averageReviewScore(getCourseStars(courseEntry))).toFixed(1)}</p>
           <img alt="Star icon" />
         </div>
         <p>{courseEntry.reviews.length > 0 ? courseEntry.reviews.length : "No"} reviews</p>
