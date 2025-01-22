@@ -4,6 +4,7 @@ import { Card, CardContent, Stack, Avatar } from "@mui/joy/";
 const CourseInfo = ({ course }: { course: Course }) => {
   return (
     <Card
+      className="overflow-auto"
       variant="plain"
       sx={{
         bgcolor: "var(--lightGray)",

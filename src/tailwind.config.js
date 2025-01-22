@@ -6,7 +6,9 @@ export default {
     extend: {
       colors: {
         lightGray: "var(--lightGray)",
+        darkGray: "var(--darkGray)",
       },
+      minWidth: { "3xl": "48rem" },
     },
   },
   plugins: [],

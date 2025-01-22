@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import CourseInfo from "./CourseInfo";
-import Reviews from "../Reviews";
+import Reviews from "./Reviews";
 import { getCourses } from "../../api/course";
 import findCourse from "../../utils/findCourse";
 import { Button } from "@mui/joy/";
@@ -28,24 +28,23 @@ const CourseView = ({ courseId }: { courseId: string | undefined }) => {
 
   return (
     <>
-      <div className="p-2">
-        <div className="flex justify-start mb-4">
-          <Button
-            sx={{
-              bgcolor: "#2C2C2C",
-            }}
-            startDecorator={<KeyboardArrowLeft />}
-            onClick={() => (window.location.href = `/`)}
-          >
-            Back
-          </Button>
-        </div>
-        <div className="flex flex-col gap-2">
+      <div className="p-2 pt-16 mx-2 flex flex-col items-start justify-start mb-4 gap-4">
+        <Button
+          sx={{
+            bgcolor: "#2C2C2C",
+          }}
+          startDecorator={<KeyboardArrowLeft />}
+          onClick={() => (window.location.href = `/`)}
+        >
+          Back
+        </Button>
+
+        <div className="flex flex-col gap-2 max-w-3xl min-w-xl md:min-w-3xl">
           <CourseInfo course={courseData} />
           <h3 className="font-bold text-xl">Reviews</h3>
           <Reviews course={courseData} />
         </div>
-        <div className="flex justify-center mt-4">
+        <div className="flex justify-center">
           <Button
             size="lg"
             sx={{
