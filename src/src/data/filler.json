@@ -16,6 +16,96 @@
         "stars": 1,
         "comment": "Best course ever!",
         "date": "2025-1-19"
+      },
+      {
+        "id": 2,
+        "name": "Anonymous",
+        "studyYear": 2,
+        "anonymity": true,
+        "feedbackTags": ["Difficult"],
+        "stars": 2,
+        "comment": "Too challenging for beginners.",
+        "date": "2023-5-10"
+      },
+      {
+        "id": 3,
+        "name": "John Smith",
+        "studyYear": 4,
+        "anonymity": false,
+        "feedbackTags": ["Informative"],
+        "stars": 4,
+        "comment": "Very informative and well-structured.",
+        "date": "2024-11-22"
+      },
+      {
+        "id": 4,
+        "name": "Jane Roe",
+        "studyYear": 3,
+        "anonymity": false,
+        "feedbackTags": ["Engaging"],
+        "stars": 5,
+        "comment": "Engaging and insightful!",
+        "date": "2022-3-15"
+      },
+      {
+        "id": 5,
+        "name": "Anonymous",
+        "studyYear": 1,
+        "anonymity": true,
+        "feedbackTags": ["Boring"],
+        "stars": 1,
+        "comment": "Boring and not useful.",
+        "date": "2021-8-30"
+      },
+      {
+        "id": 6,
+        "name": "Anonymous",
+        "studyYear": 3,
+        "anonymity": true,
+        "feedbackTags": [],
+        "stars": 1,
+        "comment": "Best course ever!",
+        "date": "2025-1-19"
+      },
+      {
+        "id": 7,
+        "name": "Anonymous",
+        "studyYear": 2,
+        "anonymity": true,
+        "feedbackTags": ["Difficult"],
+        "stars": 2,
+        "comment": "Too challenging for beginners.",
+        "date": "2023-5-10"
+      },
+      {
+        "id": 8,
+        "name": "John Smith",
+        "studyYear": 4,
+        "anonymity": false,
+        "feedbackTags": ["Informative"],
+        "stars": 4,
+        "comment": "Very informative and well-structured.",
+        "date": "2024-11-22"
+      },
+      {
+        "id": 9,
+        "name": "Jane Roe",
+        "studyYear": 3,
+        "anonymity": false,
+        "feedbackTags": ["Engaging"],
+        "stars": 5,
+        "comment": "Engaging and insightful!",
+        "date": "2022-3-15"
+      },
+      {
+        "id": 10,
+        "name": "Anonymous",
+        "studyYear": 1,
+        "anonymity": true,
+        "feedbackTags": ["Boring"],
+        "stars": 1,
+        "comment": "Boring and not useful.",
+        "date": "2021-8-30"
       }
     ]
   },
@@ -39,64 +129,44 @@
       },
       {
         "id": 2,
-        "name": "Anonymous",
-        "studyYear": 3,
-        "anonymity": true,
-        "feedbackTags": [],
+        "name": "Alice Johnson",
+        "studyYear": 2,
+        "anonymity": false,
+        "feedbackTags": ["Challenging"],
         "stars": 4,
-        "comment": "The examples provided during lectures were very helpful.",
-        "date": "2025-1-19"
+        "comment": "Challenging but rewarding.",
+        "date": "2023-7-14"
       },
       {
         "id": 3,
         "name": "Anonymous",
-        "studyYear": 3,
+        "studyYear": 1,
         "anonymity": true,
-        "feedbackTags": [],
-        "stars": 3,
-        "comment": "The course could use more practical exercises to apply the concepts.",
-        "date": "2025-1-19"
+        "feedbackTags": ["Confusing"],
+        "stars": 2,
+        "comment": "Confusing and hard to follow.",
+        "date": "2022-12-01"
       },
       {
         "id": 4,
-        "name": "Anonymous",
+        "name": "Bob Brown",
         "studyYear": 3,
-        "anonymity": true,
-        "feedbackTags": [],
-        "stars": 4,
-        "comment": "The course was well-structured, but the assignments were a bit too difficult.",
-        "date": "2025-1-19"
+        "anonymity": false,
+        "feedbackTags": ["Informative"],
+        "stars": 5,
+        "comment": "Extremely informative and well-taught.",
+        "date": "2024-4-18"
       },
       {
         "id": 5,
         "name": "Anonymous",
-        "studyYear": 3,
+        "studyYear": 4,
         "anonymity": true,
-        "feedbackTags": [],
-        "stars": 4,
-        "comment": "The lectures covered all the important topics in depth, which was helpful.",
-        "date": "2025-1-19"
-      },
-      {
-        "id": 6,
-        "name": "Anonymous",
-        "studyYear": 3,
-        "anonymity": true,
-        "feedbackTags": [],
-        "stars": 4,
-        "comment": "The instructor kept the lectures interesting and interactive.",
-        "date": "2025-1-19"
-      },
-      {
-        "id": 7,
-        "name": "Anonymous",
-        "studyYear": 3,
-        "anonymity": true,
-        "feedbackTags": [],
-        "stars": 4,
-        "comment": "The instructor explained complex topics clearly, making them easy to understand.",
-        "date": "2025-1-19"
-      }
+        "feedbackTags": ["Difficult"],
+        "stars": 3,
+        "comment": "Difficult but necessary.",
+        "date": "2021-9-25"
+      }  
     ]
   },
   {
@@ -134,6 +204,208 @@
         "anonymity": false,
         "feedbackTags": ["Engaging", "Informative"],
         "comment": "The instructor was very clear and helpful!"
+      },
+      {
+        "id": 3,
+        "stars": 4,
+        "name": "Anonymous",
+        "studyYear": 3,
+        "anonymity": true,
+        "feedbackTags": ["Challenging"],
+        "comment": "Very informative but tough."
+      },
+      {
+        "id": 4,
+        "stars": 5,
+        "name": "Anonymous",
+        "studyYear": 4,
+        "anonymity": true,
+        "feedbackTags": ["Innovative"],
+        "comment": "Loved the practical approach!"
+      },
+      {
+        "id": 5,
+        "stars": 3,
+        "name": "Anonymous",
+        "studyYear": 2,
+        "anonymity": true,
+        "feedbackTags": ["Complex"],
+        "comment": "Interesting but difficult."
+      },
+      {
+        "id": 6,
+        "stars": 4,
+        "name": "Anonymous",
+        "studyYear": 3,
+        "anonymity": true,
+        "feedbackTags": ["Essential"],
+        "comment": "A must for every engineer."
+      },
+      {
+        "id": 7,
+        "stars": 5,
+        "name": "Anonymous",
+        "studyYear": 4,
+        "anonymity": true,
+        "feedbackTags": ["Relevant"],
+        "comment": "Very relevant to current trends."
+      },
+      {
+        "id": 8,
+        "stars": 4,
+        "name": "Anonymous",
+        "studyYear": 2,
+        "anonymity": true,
+        "feedbackTags": ["Practical"],
+        "comment": "Very practical and useful."
+      },
+      {
+        "id": 9,
+        "stars": 5,
+        "name": "Anonymous",
+        "studyYear": 3,
+        "anonymity": true,
+        "feedbackTags": ["Interactive"],
+        "comment": "Loved the hands-on projects."
+      },
+      {
+        "id": 10,
+        "stars": 5,
+        "name": "Anonymous",
+        "studyYear": 4,
+        "anonymity": true,
+        "feedbackTags": ["Engaging"],
+        "comment": "Great course for mobile enthusiasts."
+      }
+    ]
+    }
+  ,
+  {
+    "id": 4,
+    "name": "Advanced Databases",
+    "duration": "3 months",
+    "term": "Spring",
+    "teacher": "Alice Smith",
+    "subject": "Software engineering",
+    "reviews": [
+      {
+        "id": 3,
+        "name": "Anonymous",
+        "studyYear": 4,
+        "anonymity": true,
+        "feedbackTags": ["Challenging"],
+        "stars": 4,
+        "comment": "Very informative but tough.",
+        "date": "2025-2-10"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Machine Learning",
+    "duration": "4 months",
+    "term": "Winter",
+    "teacher": "Bob Johnson",
+    "subject": "Software engineering",
+    "reviews": [
+      {
+        "id": 4,
+        "name": "Anonymous",
+        "studyYear": 3,
+        "anonymity": true,
+        "feedbackTags": ["Innovative"],
+        "stars": 5,
+        "comment": "Loved the practical approach!",
+        "date": "2025-3-15"
+      },
+      {
+        "id": 2,
+        "stars": 5,
+        "name": "Sally Loe",
+        "studyYear": 2,
+        "anonymity": false,
+        "feedbackTags": ["Engaging", "Informative"],
+        "comment": "The instructor was very clear and helpful!"
+      },
+      {
+        "id": 3,
+        "name": "Anonymous",
+        "studyYear": 1,
+        "anonymity": true,
+        "feedbackTags": ["Basic"],
+        "stars": 3,
+        "comment": "Good for beginners, but too basic.",
+        "date": "2023-6-20"
+      },
+      {
+        "id": 4,
+        "name": "Charlie Green",
+        "studyYear": 2,
+        "anonymity": false,
+        "feedbackTags": ["Engaging"],
+        "stars": 4,
+        "comment": "Engaging and easy to understand.",
+        "date": "2024-10-05"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Artificial Intelligence",
+    "duration": "3 months",
+    "term": "Summer",
+    "teacher": "Carol White",
+    "subject": "Software engineering",
+    "reviews": [
+      {
+        "id": 1,
+        "name": "Anonymous",
+        "studyYear": 2,
+        "anonymity": true,
+        "feedbackTags": ["Complex"],
+        "stars": 3,
+        "comment": "Interesting but difficult.",
+        "date": "2025-4-20"
+      },
+      {
+        "id": 2,
+        "name": "Anonymous",
+        "studyYear": 3,
+        "anonymity": true,
+        "feedbackTags": ["Essential"],
+        "stars": 4,
+        "comment": "A must for every engineer.",
+        "date": "2025-5-25"
+      },
+      {
+        "id": 3,
+        "name": "John Smith",
+        "studyYear": 4,
+        "anonymity": false,
+        "feedbackTags": ["Informative"],
+        "stars": 4,
+        "comment": "Very informative and well-structured.",
+        "date": "2024-11-22"
+      },
+      {
+        "id": 4,
+        "name": "Jane Roe",
+        "studyYear": 3,
+        "anonymity": false,
+        "feedbackTags": ["Engaging"],
+        "stars": 5,
+        "comment": "Engaging and insightful!",
+        "date": "2022-3-15"
+      },
+      {
+        "id": 5,
+        "name": "Anonymous",
+        "studyYear": 1,
+        "anonymity": true,
+        "feedbackTags": ["Boring"],
+        "stars": 1,
+        "comment": "Boring and not useful.",
+        "date": "2021-8-30"
       }
     ]
   }
