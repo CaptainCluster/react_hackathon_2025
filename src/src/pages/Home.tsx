@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import filterBySearchParam from "../utils/filterBySearchParam";
 import CourseSearchResults from "../components/Search/CourseSearchResults";
+import lutImage from "../assets/lut_image.png"
+
 
 const Home = () => {
   const [searchParam, setSearchParam] = useState("");
@@ -27,10 +29,10 @@ const Home = () => {
   return (
     <>
       <div className="w-screen flex justify-center">
-        <div className="flex justify-center mb-6 py-24 pb-8 px-20 w-1/2 border border-gray-300">
-          <img alt="LUT logo" />
+        <div className="grid w-1/2 justify-center shadow shadow-black mb-6 py-16 pb-8 px-20 border border-gray-300">
+          <img className="w-1/2 justify-self-center mb-4" src={lutImage} alt="LUT logo" />
           <input
-            className="input-form rounded-2xl"
+            className="input-form rounded-2xl course-search"
             value={searchParam}
             onChange={(event) => {
               setSearchParam(event.target.value);
