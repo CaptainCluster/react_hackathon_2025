@@ -28,14 +28,15 @@ const SearchCourse = () => {
     <>
       <div className="flex justify-center">
         <div className="flex justify-center pt-20 pb-10 px-100 w-1/2 border border-gray-300">
-        <input
-          className="input-form"
-          value={searchParam}
-          onChange={(event) => {
-            setSearchParam(event.target.value);
-            console.log(event.target.value);
-          }}
-        ></input>
+          <img alt="LUT logo" />
+          <input
+            className="input-form"
+            value={searchParam}
+            onChange={(event) => {
+              setSearchParam(event.target.value);
+              console.log(event.target.value);
+            }}
+          ></input>
         </div>
       </div>
       <CourseSearchResults courseData={filteredData} />

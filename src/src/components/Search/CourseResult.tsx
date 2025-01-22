@@ -15,8 +15,13 @@ const CourseResult = ({ index, courseEntry }: { index: number; courseEntry: Cour
         <p>Review count</p>
       </div>
       <div className="px-3">
-        <p>{courseEntry.name}</p>
-        <p className="course-search-subject">{courseEntry.subject}</p>
+        <p className="font-bold">{courseEntry.name} ({courseEntry.credits} ECTS) - course_code</p>
+        <div>
+          <p className="course-search-subject">{courseEntry.subject}</p>
+          <p className="course-search-subject">Organizer: </p>
+          <p className="course-search-subject">Language: </p>
+          <p className="course-search-subject">Time: </p>
+        </div>
       </div>
       <div className="grid border border-gray-500 rounded-lg p-2">
         <a>Read comments</a>
