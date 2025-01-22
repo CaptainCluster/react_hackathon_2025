@@ -25,8 +25,8 @@ const Home = () => {
   const filteredData = filterBySearchParam(searchParam, data.data);
 
   return (
-    <div className="w-screen">
-      <div className="flex justify-center">
+    <>
+      <div className="w-screen flex justify-center">
         <div className="flex justify-center mb-6 py-24 pb-8 px-20 w-1/2 border border-gray-300">
           <img alt="LUT logo" />
           <input
@@ -40,7 +40,7 @@ const Home = () => {
         </div>
       </div>
       <CourseSearchResults courseData={filteredData} />
-    </div>
+    </>
   );
 };
 
