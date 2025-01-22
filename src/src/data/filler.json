@@ -32,7 +32,7 @@
         "name": "Anonymous",
         "studyYear": 3,
         "anonymity": true,
-        "feedbackTags": ["Challenging", "Time-Consuming"],
+        "feedbackTags": [],
         "stars": 3,
         "comment": "The content was challenging but rewarding to learn.",
         "date": "2025-1-19"
@@ -42,7 +42,7 @@
         "name": "Anonymous",
         "studyYear": 3,
         "anonymity": true,
-        "feedbackTags": ["Good Examples"],
+        "feedbackTags": [],
         "stars": 4,
         "comment": "The examples provided during lectures were very helpful.",
         "date": "2025-1-19"
@@ -52,7 +52,7 @@
         "name": "Anonymous",
         "studyYear": 3,
         "anonymity": true,
-        "feedbackTags": ["Needs More Practice"],
+        "feedbackTags": [],
         "stars": 3,
         "comment": "The course could use more practical exercises to apply the concepts.",
         "date": "2025-1-19"
@@ -62,7 +62,7 @@
         "name": "Anonymous",
         "studyYear": 3,
         "anonymity": true,
-        "feedbackTags": ["Well-Organized"],
+        "feedbackTags": [],
         "stars": 4,
         "comment": "The course was well-structured, but the assignments were a bit too difficult.",
         "date": "2025-1-19"
@@ -72,9 +72,9 @@
         "name": "Anonymous",
         "studyYear": 3,
         "anonymity": true,
-        "feedbackTags": ["Well-Organized"],
+        "feedbackTags": [],
         "stars": 4,
-        "comment": "The course was well-structured, but the assignments were a bit too difficult.",
+        "comment": "The lectures covered all the important topics in depth, which was helpful.",
         "date": "2025-1-19"
       },
       {
@@ -82,9 +82,9 @@
         "name": "Anonymous",
         "studyYear": 3,
         "anonymity": true,
-        "feedbackTags": ["Well-Organized"],
+        "feedbackTags": [],
         "stars": 4,
-        "comment": "The course was well-structured, but the assignments were a bit too difficult.",
+        "comment": "The instructor kept the lectures interesting and interactive.",
         "date": "2025-1-19"
       },
       {
@@ -92,9 +92,9 @@
         "name": "Anonymous",
         "studyYear": 3,
         "anonymity": true,
-        "feedbackTags": ["Well-Organized"],
+        "feedbackTags": [],
         "stars": 4,
-        "comment": "The course was well-structured, but the assignments were a bit too difficult.",
+        "comment": "The instructor explained complex topics clearly, making them easy to understand.",
         "date": "2025-1-19"
       }
     ]
