@@ -1,4 +1,4 @@
-import { useParams, Link, NavLink } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import findCourse from "../../utils/findCourse";
 import { useQuery } from "@tanstack/react-query";
 import { getCourses } from "../../api/course";
@@ -31,7 +31,7 @@ const RateCourse = () => {
   return (
     <div className="w-screen grid justify-center">
       <div className="m-2">
-        <NavLink  to={`/course/${courseId}`}>
+        <NavLink to={`/course/${courseId}`}>
           <Button
             sx={{
               bgcolor: "#2C2C2C",
