@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import Course from "../../models/interfaces/Course";
 import ReviewSummary from "../Course/ReviewSummary";
 
@@ -10,10 +11,10 @@ const CourseResult = ({
 }) => {
   const numReviews = courseEntry.reviews.length;
   return (
+    <NavLink to={`/course/${courseEntry.id}`}>
     <li
       className="bg-white grid grid-cols-3 mb-3 p-3 border border-gray-300  my-1 hover:border-blue-300 cursor-pointer"
       key={index}
-      onClick={() => (window.location.href = `/course/${courseEntry.id}`)}
     >
       {numReviews > 0 ? (
         <ReviewSummary
@@ -40,6 +41,7 @@ const CourseResult = ({
         <img className="self-center" alt="comment icon" />
       </div>
     </li>
+    </NavLink>
   );
 };
 

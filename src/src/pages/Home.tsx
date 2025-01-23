@@ -41,7 +41,6 @@ const Home = () => {
             value={searchParam}
             onChange={(event) => {
               setSearchParam(event.target.value);
-              console.log(event.target.value);
             }}
           ></input>
         </div>

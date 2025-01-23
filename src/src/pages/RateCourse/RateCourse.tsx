@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import findCourse from "../../utils/findCourse";
 import { useQuery } from "@tanstack/react-query";
 import { getCourses } from "../../api/course";
@@ -31,15 +31,16 @@ const RateCourse = () => {
   return (
     <div className="w-screen grid justify-center">
       <div className="m-2">
-        <Button
-          sx={{
-            bgcolor: "#2C2C2C",
-          }}
-          startDecorator={<KeyboardArrowLeft />}
-          onClick={() => (window.location.href = `/course/${courseId}`)}
-        >
-          Back to course view
-        </Button>
+        <NavLink to={`/course/${courseId}`}>
+          <Button
+            sx={{
+              bgcolor: "#2C2C2C",
+            }}
+            startDecorator={<KeyboardArrowLeft />}
+          >
+            Back to course view
+          </Button>
+        </NavLink>
       </div>
       <CourseInfo course={courseData} />
       <RateForm />
