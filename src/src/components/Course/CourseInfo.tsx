@@ -39,8 +39,8 @@ const CourseInfo = ({
             <p className="font-bold text-base">{course.subject}</p>
           </div>
         </Stack>
-        <div className="grid grid-rows-2">
-          <ReviewSummary numReviews={numReviews} />
+        <div className="flex flex-col gap-5 justify-center">
+          <ReviewSummary course={course} numReviews={numReviews} />
           <div>
             <Card
               sx={{
