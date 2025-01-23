@@ -17,7 +17,7 @@ const CourseResult = ({ index, courseEntry }: { index: number; courseEntry: Cour
         <p>{courseEntry.reviews.length > 0 ? courseEntry.reviews.length : "No"} reviews</p>
       </div>
       <div className="grid justify-self-start px-3 core-course-info">
-        <p className="font-bold">{courseEntry.name} ({courseEntry.credits} ECTS) - course_code</p>
+        <p className="font-bold">{courseEntry.name} ({courseEntry.credits} ECTS) - {courseEntry.code}</p>
         <div>
           <p className="course-search-subject">Subject: {courseEntry.subject}</p>
           <p className="course-search-subject">Language: {courseEntry.language}</p>
