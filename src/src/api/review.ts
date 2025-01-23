@@ -75,11 +75,11 @@ export async function addReview(CourseID: number, newReview: Review): Promise<Ax
       } as FailResponse;
     }
 
+    // Cant be found????????
     course.reviews.push(newReview);
     const response2 = await axios.put<Course>(
-      endpoint,
-      course,
-      {params: {id: CourseID}}
+      endpoint + "/" +  CourseID,
+      course
     );
     return response2;
   } catch (error) {
