@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 
 const CourseView = ({ courseId }: { courseId: string | undefined }) => {
   const { isLoading, isError, data, error } = useQuery({
-    queryKey: ["courses"],
+    queryKey: ["course"],
     queryFn: () => getCourseById(Number(courseId)),
   });
 

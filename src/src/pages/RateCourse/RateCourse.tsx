@@ -10,7 +10,7 @@ const RateCourse = () => {
   const courseId: string | undefined = useParams().id;
 
   const { isLoading, isError, data, error } = useQuery({
-    queryKey: ["courses"],
+    queryKey: ["course"],
     queryFn: () => getCourseById(Number(courseId)),
   });
   if (isLoading) {
