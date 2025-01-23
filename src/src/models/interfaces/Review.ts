@@ -3,7 +3,7 @@ import { FeedbackTags } from "../enums/FeedbackTags";
 export interface Review {
   id: number;
   name: string;
-  studyYear: number | "Graduated" | "Open university"; 
+  studyYear: number | "Graduated" | "Open university"; // TODO: add support for strings
   anonymity: boolean;
   feedbackTags?: FeedbackTags[];
   stars: number;

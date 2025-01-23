@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "db": "json-server ./src/data/filler.json -p 3000 -h localhost"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -16,6 +17,7 @@
     "@mui/joy": "^5.0.0-beta.51",
     "@tanstack/react-query": "^5.64.1",
     "axios": "^1.7.9",
+    "json-server": "^1.0.0-beta.3",
     "pnpm": "^9.15.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

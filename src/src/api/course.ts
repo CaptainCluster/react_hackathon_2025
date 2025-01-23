@@ -2,11 +2,15 @@ import axios, { AxiosResponse } from "axios";
 import FailResponse from "../models/interfaces/response/FailResponse";
 import Course from "../models/interfaces/Course";
 
+const port: number = 3000;
+const ip: string = "http://localhost:" + port;
+const endpoint: string = ip+"/courses";
 export async function getCourses(): Promise<
   AxiosResponse<Course[]> | FailResponse
 > {
   try {
-    const response = await axios.get<Course[]>("/src/data/filler.json");
+    const response = await axios.get<Course[]>(endpoint);
+    console.log("response:",response)
     return response;
   } catch (error) {
     console.error(error);
@@ -19,15 +23,11 @@ export async function getCourses(): Promise<
 export async function getCourseById(CourseID:number): Promise<
   AxiosResponse<Course> | FailResponse> {
     try {
-      const response = await axios.get<Course[]>("/src/data/filler.json");
-      const course: Course | undefined = response.data.find(
-        (course) => course.id === CourseID);
-
-      if (course === undefined) {
-        return {
-          msg: "Course not found",
-        } as FailResponse;
-      }
+      const response = await axios.get<Course[]>(endpoint,
+        {params: {id: CourseID}}
+      );
+      console.log("getCourseById response:",response)
+      const course: Course | undefined = response.data[0]
       return {
         data: course,
         status: 200,

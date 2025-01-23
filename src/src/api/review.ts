@@ -1,13 +1,30 @@
 import axios, { AxiosResponse } from "axios";
 import FailResponse from "../models/interfaces/response/FailResponse";
 import { Review } from "../models/interfaces/Review";
+import Course from "../models/interfaces/Course";
 
+const port: number = 3000;
+const ip: string = "http://localhost:" + port;
+const endpoint: string = ip+"/courses";
 export async function getReviews(CourseID: number): Promise<AxiosResponse<Review[]> | FailResponse> {
   try {
-    const response = await axios.get<Review[]>(
-      "/src/data/reviews/" + CourseID + ".json"
+    const response = await axios.get<Course[]>(endpoint,
+      {params: {id: CourseID}}
     );
-    return response;
+    const course: Course | undefined = response.data[0]
+    
+    if (course === undefined) {
+      return {
+        msg: "Course not found",
+      } as FailResponse;
+    }
+    return {
+      data: course.reviews,
+      status: 200,
+      statusText: "OK",
+      headers: {},
+      config: {},
+    } as AxiosResponse<Review[]>;
   } catch (error) {
     console.error(error);
     return {
@@ -18,11 +35,22 @@ export async function getReviews(CourseID: number): Promise<AxiosResponse<Review
 
 export async function getReviewAmount(CourseID: number): Promise<AxiosResponse<Number> | FailResponse> {
   try {
-    const response = await axios.get<Review[]>(
-      "/src/data/reviews/" + CourseID + ".json"
+    const response = await axios.get<Course[]>(endpoint,
+      {params: {id: CourseID}}
     );
+    const course: Course | undefined = response.data[0]
+    
+    if (course === undefined) {
+      return {
+        msg: "Course not found",
+      } as FailResponse;
+    }
     return {
-      data: response.data.length
+      data: course.reviews.length,
+      status: 200,
+      statusText: "OK",
+      headers: {},
+      config: {},
     } as AxiosResponse<number>;
   } catch (error) {
     console.error(error);
@@ -34,13 +62,26 @@ export async function getReviewAmount(CourseID: number): Promise<AxiosResponse<N
 
 // TODO:
 //  - make sure this actually works
-export async function addReview(CourseID: number, newReview: Review): Promise<AxiosResponse<Review> | FailResponse> {
+export async function addReview(CourseID: number, newReview: Review): Promise<AxiosResponse<Course> | FailResponse> {
   try {
-    const response = await axios.post<Review>(
-      "/src/data/reviews/" + CourseID + ".json",
-      newReview
+    const response = await axios.get<Course[]>(endpoint,
+      {params: {id: CourseID}}
     );
-    return response;
+    const course: Course | undefined = response.data[0]
+    
+    if (course === undefined) {
+      return {
+        msg: "Course not found",
+      } as FailResponse;
+    }
+
+    course.reviews.push(newReview);
+    const response2 = await axios.put<Course>(
+      endpoint,
+      course,
+      {params: {id: CourseID}}
+    );
+    return response2;
   } catch (error) {
     console.error(error);
     return {
