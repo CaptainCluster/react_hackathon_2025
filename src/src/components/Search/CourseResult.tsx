@@ -24,9 +24,7 @@ const CourseResult = ({
         <div>No reviews available</div>
       )}
       <div className="grid justify-self-start px-3 core-course-info">
-        <p className="font-bold">
-          {courseEntry.name} ({courseEntry.credits} ECTS) - course_code
-        </p>
+        <p className="font-bold">{courseEntry.name} ({courseEntry.credits} ECTS) - {courseEntry.code}</p>
         <div>
           <p className="course-search-subject">
             Subject: {courseEntry.subject}

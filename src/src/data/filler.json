@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "Computer Networks and Internet",
+    "code": "CT354NFGIJGS",
     "credits": 3,
     "language": "English",
     "duration": "2 months",
@@ -114,6 +115,7 @@
   {
     "id": 2,
     "name": "Data Structures and Algorithms",
+    "code": "CT33JGISS",
     "credits": 6,
     "language": "English",
     "duration": "string",
@@ -176,6 +178,7 @@
   {
     "id": 3,
     "name": "Introduction to Programming",
+    "code": "CT382JGNSFNG",
     "credits": 6,
     "language": "English",
     "duration": "2 months",
@@ -269,6 +272,7 @@
   {
     "id": 4,
     "name": "Advanced Databases",
+    "code": "CT39NSFN",
     "credits": 3,
     "language": "English",
     "duration": "3 months",
@@ -291,6 +295,7 @@
   {
     "id": 5,
     "name": "Machine Learning",
+    "code": "CT354NFGIJGS",
     "credits": 4,
     "language": "English",
     "duration": "4 months",
@@ -342,6 +347,7 @@
   {
     "id": 6,
     "name": "Artificial Intelligence",
+    "code": "CT354NFGIJGS",
     "credits": 3,
     "language": "English",
     "duration": "3 months",
@@ -404,6 +410,7 @@
   {
     "id": 7,
     "name": "Marketing",
+    "code": "CT35AUSF",
     "credits": 3,
     "language": "English",
     "duration": "3 months",

@@ -4,6 +4,7 @@ import { Review } from "./Review";
 export default interface Course {
   id: number;
   name: string;
+  code: string;
   credits: number;
   language: string;
   duration: string;
