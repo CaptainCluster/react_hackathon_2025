@@ -10,7 +10,7 @@ const Home = () => {
   const [searchParam, setSearchParam] = useState("");
 
   const { isLoading, isError, data, error } = useQuery({
-    queryKey: ["courses"],
+    queryKey: ["coursess"],
     queryFn: () => getCourses(),
   });
 
