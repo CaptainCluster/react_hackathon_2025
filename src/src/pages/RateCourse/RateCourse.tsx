@@ -1,7 +1,6 @@
 import { useParams, NavLink } from "react-router-dom";
-import findCourse from "../../utils/findCourse";
 import { useQuery } from "@tanstack/react-query";
-import { getCourses } from "../../api/course";
+import { getCourseById } from "../../api/course";
 import CourseInfo from "../../components/Course/CourseInfo";
 import RateForm from "./RateForm";
 import { Button } from "@mui/joy";
@@ -12,7 +11,7 @@ const RateCourse = () => {
 
   const { isLoading, isError, data, error } = useQuery({
     queryKey: ["courses"],
-    queryFn: () => getCourses(),
+    queryFn: () => getCourseById(Number(courseId)),
   });
   if (isLoading) {
     return <span className="text-white">Loading...</span>;
@@ -23,11 +22,13 @@ const RateCourse = () => {
   if (data === undefined || "msg" in data) {
     return <span className="text-white">No data</span>;
   }
-  const courseData = findCourse(data.data, Number(courseId));
+  const courseData = data.data;
+  console.log("courseData:", courseData);
+  
   if (courseData === undefined) {
     return <span className="text-white">No course</span>;
   }
-
+  const numReviews = courseData.reviews.length;
   return (
     <div className="w-screen grid justify-center">
       <div className="m-2">
@@ -42,8 +43,8 @@ const RateCourse = () => {
           </Button>
         </NavLink>
       </div>
-      <CourseInfo course={courseData} />
-      <RateForm />
+      <CourseInfo course={courseData} numReviews={numReviews}/>
+      <RateForm courseData={courseData}/>
     </div>
   );
 };

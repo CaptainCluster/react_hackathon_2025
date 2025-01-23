@@ -1,8 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import CourseInfo from "./CourseInfo";
 import Reviews from "./Reviews";
-import { getCourses } from "../../api/course";
-import findCourse from "../../utils/findCourse";
+import { getCourseById } from "../../api/course";
 import { Button } from "@mui/joy/";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import { NavLink } from "react-router-dom";
@@ -10,7 +9,7 @@ import { NavLink } from "react-router-dom";
 const CourseView = ({ courseId }: { courseId: string | undefined }) => {
   const { isLoading, isError, data, error } = useQuery({
     queryKey: ["courses"],
-    queryFn: () => getCourses(),
+    queryFn: () => getCourseById(Number(courseId)),
   });
 
   if (isLoading) {
@@ -22,11 +21,7 @@ const CourseView = ({ courseId }: { courseId: string | undefined }) => {
   if (data === undefined || "msg" in data) {
     return <span className="text-white">No data</span>;
   }
-  const courseData = findCourse(data.data, Number(courseId));
-  if (courseData === undefined) {
-    return <span className="text-white">No course</span>;
-  }
-
+  const courseData = data.data;
   const numReviews = courseData.reviews.length;
   const showReviews = numReviews > 0;
   return (
@@ -48,7 +43,7 @@ const CourseView = ({ courseId }: { courseId: string | undefined }) => {
           <h3 className="font-bold text-xl">
             {showReviews ? `${numReviews} Reviews` : "No reviews"}
           </h3>
-          {showReviews ? <Reviews course={courseData} /> : ""}
+          {showReviews ? <Reviews courseId={courseId} /> : ""}
         </div>
         <div className="flex justify-center">
           <NavLink to={`/rate/${courseId}`}>

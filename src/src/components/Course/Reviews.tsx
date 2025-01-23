@@ -1,8 +1,26 @@
 import ReviewComment from "./ReviewComment";
-import Course from "../../models/interfaces/Course";
 import { Card } from "@mui/joy/";
+import { useQuery } from "@tanstack/react-query";
+import { getReviews } from "../../api/review";
+import { Review } from "../../models/interfaces/Review";
 
-const Reviews = ({ course }: { course: Course }) => {
+const Reviews = ({ courseId }: { courseId: string | undefined }) => {
+  const { isLoading, isError, data, error } = useQuery({
+    queryKey: ["Reviews"],
+    queryFn: () => getReviews(Number(courseId)),
+  });
+
+  if (isLoading) {
+    return <span className="text-black">Loading...</span>;
+  }
+  if (isError) {
+    return <span className="text-black">Error: {error.message}</span>;
+  }
+  if (data === undefined || "msg" in data) {
+    return <span className="text-black">No Reviews</span>;
+  }
+  const reviews: Review[] = data.data;
+  console.log("reviews:",reviews);
   return (
     <Card
       variant="plain"
@@ -11,7 +29,7 @@ const Reviews = ({ course }: { course: Course }) => {
       }}
     >
       <div className="overflow-auto max-h-72 flex flex-col space-y-2 ">
-        {course.reviews.map((reviewEntry, index) => (
+        {reviews.map((reviewEntry, index) => (
           <ReviewComment reviewData={reviewEntry} index={index} />
         ))}
       </div>

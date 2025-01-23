@@ -1,12 +1,11 @@
 import { NavLink } from "react-router-dom";
 import Course from "../../models/interfaces/Course";
 import ReviewSummary from "../Course/ReviewSummary";
-
-const CourseResult = ({
-  index,
-  courseEntry,
-}: {
-  index: number;
+const CourseResult = ({ 
+  index, 
+  courseEntry, 
+}: { 
+  index: number; 
   courseEntry: Course;
 }) => {
   const numReviews = courseEntry.reviews.length;
