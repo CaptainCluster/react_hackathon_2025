@@ -33,7 +33,7 @@ const ReviewSummary = ({
               sx={{ justifyContent: "center", alignItems: "center" }}
             >
               <div className="flex flex-row gap-1">
-                <p className="text-5xl font-bold text-white">{avgScore}</p>
+                <p className="text-[44px] font-bold text-white">{avgScore}</p>
                 <div className="p-2">
                   <StarBorderIcon
                     sx={{ color: "white", height: "40px", width: "40px" }}
