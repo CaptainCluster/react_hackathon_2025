@@ -417,6 +417,28 @@
     "term": "Fall",
     "teacher": "Carol White",
     "subject": "Business",
+    "reviews": [
+      {
+        "id": 1,
+        "name": "Anonymous",
+        "studyYear": 1,
+        "anonymity": true,
+        "feedbackTags": ["Boring"],
+        "stars": 1,
+        "comment": "Boring and not useful.",
+        "date": "2021-3-30"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Engineering Physics",
+    "credits": 6,
+    "language": "English",
+    "duration": "3 months",
+    "term": "Fall",
+    "teacher": "Matt Smith",
+    "subject": "Computational engineering",
     "reviews": []
   }
 ]

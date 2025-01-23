@@ -41,8 +41,8 @@ const CourseView = ({ courseId }: { courseId: string | undefined }) => {
           Back
         </Button>
 
-        <div className="flex flex-col gap-2 max-w-3xl min-w-3xl md:min-w-3xl">
-          <CourseInfo course={courseData} />
+        <div className="flex flex-col gap-2 max-w-3xl min-w-md md:min-w-3xl">
+          <CourseInfo course={courseData} numReviews={numReviews} />
           <h3 className="font-bold text-xl">
             {showReviews ? `${numReviews} Reviews` : "No reviews"}
           </h3>
