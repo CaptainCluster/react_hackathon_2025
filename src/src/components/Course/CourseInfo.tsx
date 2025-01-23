@@ -1,10 +1,17 @@
 import Course from "../../models/interfaces/Course";
+import ReviewSummary from "./ReviewSummary";
 import { Card, CardContent, Stack, Avatar } from "@mui/joy/";
 
-const CourseInfo = ({ course }: { course: Course }) => {
+const CourseInfo = ({
+  course,
+  numReviews,
+}: {
+  course: Course;
+  numReviews: number;
+}) => {
   return (
     <Card
-      className="overflow-auto"
+      className="overflow-auto shadow-lg"
       variant="plain"
       sx={{
         bgcolor: "var(--lightGray)",
@@ -33,7 +40,7 @@ const CourseInfo = ({ course }: { course: Course }) => {
           </div>
         </Stack>
         <div className="grid grid-rows-2">
-          <p className="additional-info">Rating summary component here</p>
+          <ReviewSummary numReviews={numReviews} />
           <div>
             <Card
               sx={{
