@@ -7,7 +7,9 @@
     "duration": "2 months",
     "term": "Spring",
     "teacher": "John Doe",
-    "subject": "Software engineering"
+    "subject": "Software engineering",
+    "reviewAmount": 10,
+    "reviewScore": 2.6
   },
   {
     "id": 2,
@@ -17,7 +19,9 @@
     "duration": "string",
     "term": "Autumn",
     "teacher": "Johnny Doe",
-    "subject": "Software engineering"
+    "subject": "Software engineering",
+    "reviewAmount": 5,
+    "reviewScore": 3.4
   },
   {
     "id": 3,
@@ -27,7 +31,9 @@
     "duration": "2 months",
     "term": "Fall",
     "teacher": "Jane Doe",
-    "subject": "Software engineering"
+    "subject": "Software engineering",
+    "reviewAmount": 9,
+    "reviewScore": 4.45
   },
   {
     "id": 4,
@@ -37,7 +43,9 @@
     "duration": "3 months",
     "term": "Spring",
     "teacher": "Alice Smith",
-    "subject": "Software engineering"
+    "subject": "Software engineering",
+    "reviewAmount": 1,
+    "reviewScore": 4.0
   },
   {
     "id": 5,
@@ -47,7 +55,9 @@
     "duration": "4 months",
     "term": "Winter",
     "teacher": "Bob Johnson",
-    "subject": "Software engineering"
+    "subject": "Software engineering",
+    "reviewAmount": 4,
+    "reviewScore": 4.25
   },
   {
     "id": 6,
@@ -57,7 +67,9 @@
     "duration": "3 months",
     "term": "Summer",
     "teacher": "Carol White",
-    "subject": "Software engineering"
+    "subject": "Software engineering",
+    "reviewAmount": 5,
+    "reviewScore": 3.4
   },
   {
     "id": 7,
@@ -67,6 +79,8 @@
     "duration": "3 months",
     "term": "Fall",
     "teacher": "Carol White",
-    "subject": "Business"
+    "subject": "Business",
+    "reviewAmount": 0,
+    "reviewScore": 0
   }
 ]

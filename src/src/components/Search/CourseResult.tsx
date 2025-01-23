@@ -1,20 +1,17 @@
 import Course from "../../models/interfaces/Course";
-import averageReviewScore from "../../utils/averageReviewScore";
-import getCourseStars from "../../utils/getCourseStars";
-
 const CourseResult = ({ index, courseEntry }: { index: number; courseEntry: Course }) => {
   return (
     <li 
       className="bg-white grid grid-cols-3  mb-3 p-3 border border-gray-300  my-1 hover:border-blue-300 cursor-pointer" 
-      key={index}
+      key={index} // miksi react itkee avaimesta ku tässä se on????
       onClick={() => window.location.href = `/course/${courseEntry.id}`}
     >
       <div className="grid grid-cols-2 w-4/5 border border-gray-500 rounded-lg p-2">
         <div className="flex flex-col">
-          <p>{Number(averageReviewScore(getCourseStars(courseEntry))).toFixed(1)}</p>
+          <p>{Number(courseEntry.reviewScore).toFixed(1)}</p>
           <img alt="Star icon" />
         </div>
-        <p>{courseEntry.reviews.length > 0 ? courseEntry.reviews.length : "No"} reviews</p>
+        <p>{courseEntry.reviewAmount > 0 ? courseEntry.reviewAmount : "No"} reviews</p>
       </div>
       <div className="grid justify-self-start px-3 core-course-info">
         <p className="font-bold">{courseEntry.name} ({courseEntry.credits} ECTS) - course_code</p>

@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import findCourse from "../../utils/findCourse";
 import { useQuery } from "@tanstack/react-query";
 import { getCourseById } from "../../api/course";
 import CourseInfo from "../../components/Course/CourseInfo";
