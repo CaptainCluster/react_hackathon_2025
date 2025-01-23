@@ -3,31 +3,16 @@ import { StudyFieldOption } from "../../models/enums/StudyFieldOption";
 // import { FeedbackTags } from "../../models/enums/FeedbackTags";
 // This should be added if you wanna find a fun way to add many tags
 import { useState } from "react";
-import { addReview, getReviewAmount } from "../../api/review";
+import { addReview } from "../../api/review";
 import {Review} from "../../models/interfaces/Review";
-import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
+import Course from "../../models/interfaces/Course";
 
 /* TODO:
   - make the form look better
   - add FeedbackTags to the form
 */
-const RateForm = () => {
-  const CourseId: string | undefined = useParams().id;
-  const { isLoading, isError, data, error } = useQuery({
-    queryKey: ["courses"],
-    queryFn: () => getReviewAmount(Number(CourseId)),
-  });
-  if (isLoading) {
-    return <span className="text-white">Loading...</span>;
-  }
-  if (isError) {
-    return <span className="text-white">Error: {error.message}</span>;
-  }
-  if (data === undefined || "msg" in data) {
-    return <span className="text-white">No data</span>;
-  }
-  const reviewAmount = data.data;
+const RateForm = ({courseData }: { courseData: Course; }) => {
+  const reviewAmount = courseData.reviews.length;
   const [currentStudyField, setCurrentStudyField] = useState<StudyFieldOption>();
   const [selectedScore, setSelectedScore] = useState<number>(0);
   const [anonymity, setAnonymity] = useState<boolean>(false);
@@ -56,7 +41,7 @@ const RateForm = () => {
     }
 
     console.log("review:",review)
-    addReview(Number(CourseId), review)
+    addReview(courseData.id, review)
       .then(response => {
         console.log('Review submitted successfully:', response);
       })

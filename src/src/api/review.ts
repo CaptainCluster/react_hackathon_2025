@@ -60,8 +60,6 @@ export async function getReviewAmount(CourseID: number): Promise<AxiosResponse<N
   }
 }
 
-// TODO:
-//  - make sure this actually works
 export async function addReview(CourseID: number, newReview: Review): Promise<AxiosResponse<Course> | FailResponse> {
   try {
     const response = await axios.get<Course[]>(endpoint,

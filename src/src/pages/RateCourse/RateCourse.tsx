@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getCourseById } from "../../api/course";
 import CourseInfo from "../../components/Course/CourseInfo";
@@ -23,25 +23,28 @@ const RateCourse = () => {
     return <span className="text-white">No data</span>;
   }
   const courseData = data.data;
+  console.log("courseData:", courseData);
+  
   if (courseData === undefined) {
     return <span className="text-white">No course</span>;
   }
-
+  const numReviews = courseData.reviews.length;
   return (
     <div className="w-screen grid justify-center">
       <div className="m-2">
-        <Button
-          sx={{
-            bgcolor: "#2C2C2C",
-          }}
-          startDecorator={<KeyboardArrowLeft />}
-          onClick={() => (window.location.href = `/course/${courseId}`)}
-        >
-          Back to course view
-        </Button>
+        <NavLink to={`/course/${courseId}`}>
+          <Button
+            sx={{
+              bgcolor: "#2C2C2C",
+            }}
+            startDecorator={<KeyboardArrowLeft />}
+          >
+            Back to course view
+          </Button>
+        </NavLink>
       </div>
-      <CourseInfo course={courseData} />
-      <RateForm/>
+      <CourseInfo course={courseData} numReviews={numReviews}/>
+      <RateForm courseData={courseData}/>
     </div>
   );
 };
