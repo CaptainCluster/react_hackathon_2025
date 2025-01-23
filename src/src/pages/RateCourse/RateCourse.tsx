@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import findCourse from "../../utils/findCourse";
 import { useQuery } from "@tanstack/react-query";
-import { getCourses } from "../../api/course";
+import { getCourseById } from "../../api/course";
 import CourseInfo from "../../components/Course/CourseInfo";
 import RateForm from "./RateForm";
 import { Button } from "@mui/joy";
@@ -12,7 +12,7 @@ const RateCourse = () => {
 
   const { isLoading, isError, data, error } = useQuery({
     queryKey: ["courses"],
-    queryFn: () => getCourses(),
+    queryFn: () => getCourseById(Number(courseId)),
   });
   if (isLoading) {
     return <span className="text-white">Loading...</span>;
@@ -23,7 +23,7 @@ const RateCourse = () => {
   if (data === undefined || "msg" in data) {
     return <span className="text-white">No data</span>;
   }
-  const courseData = findCourse(data.data, Number(courseId));
+  const courseData = data.data;
   if (courseData === undefined) {
     return <span className="text-white">No course</span>;
   }
@@ -42,7 +42,7 @@ const RateCourse = () => {
         </Button>
       </div>
       <CourseInfo course={courseData} />
-      <RateForm courseID={Number(courseId)}/>
+      <RateForm/>
     </div>
   );
 };

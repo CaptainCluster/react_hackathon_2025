@@ -3,100 +3,149 @@ import { StudyFieldOption } from "../../models/enums/StudyFieldOption";
 // import { FeedbackTags } from "../../models/enums/FeedbackTags";
 // This should be added if you wanna find a fun way to add many tags
 import { useState } from "react";
+import { addReview, getReviewAmount } from "../../api/review";
+import {Review} from "../../models/interfaces/Review";
+import { useQuery } from "@tanstack/react-query";
+import { useParams } from "react-router-dom";
 
-const RateForm = (CourseID: any ) => {
-  /* For some reason typecasting raises an error on RateCourse */
-  CourseID = Number(CourseID)
-  const [currentStudyField, setCurrentStudyField] = useState<StudyFieldOption>()
+/* TODO:
+  - make the form look better
+  - add FeedbackTags to the form
+*/
+const RateForm = () => {
+  const CourseId: string | undefined = useParams().id;
+  const { isLoading, isError, data, error } = useQuery({
+    queryKey: ["courses"],
+    queryFn: () => getReviewAmount(Number(CourseId)),
+  });
+  if (isLoading) {
+    return <span className="text-white">Loading...</span>;
+  }
+  if (isError) {
+    return <span className="text-white">Error: {error.message}</span>;
+  }
+  if (data === undefined || "msg" in data) {
+    return <span className="text-white">No data</span>;
+  }
+  const reviewAmount = data.data;
+  const [currentStudyField, setCurrentStudyField] = useState<StudyFieldOption>();
+  const [selectedScore, setSelectedScore] = useState<number>(0);
+  const [anonymity, setAnonymity] = useState<boolean>(false);
+  const [name, setName] = useState<string>("");
 
   // function to get keys of an enum
   function getEnumKeys<T extends string, TEnumValue extends string | number,>
   (enumVariable: { [key in T]: TEnumValue }): Array<T> {
     return Object.keys(enumVariable) as Array<T>;
   }
-  /*
-    meitsi meni pilaamaan noi classNamet, joten ne saa korjata :D
-  */
+
+  // function to handle the form submission
+  function handleEvent(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const formData = Object.fromEntries(form.entries());
+
+    const review: Review = {
+      id: (Number(reviewAmount)+1),
+      name: formData["anon-post"] === "on" ? "anonymous" : formData["name"] as string,
+      studyYear: Number(formData["years-study"]),
+      anonymity: formData["anon-post"] === "on",
+      stars: Number(selectedScore),
+      comment: formData["comment"] as string,
+      date: new Date,
+    }
+
+    console.log("review:",review)
+    addReview(Number(CourseId), review)
+      .then(response => {
+        console.log('Review submitted successfully:', response);
+      })
+      .catch(error => {
+        console.error('Error submitting review:', error);
+      });
+  }
+
   return (
-    <div className="border border-gray-400 rounded-lg p-5 m-2">
+    <form className="border border-gray-400 rounded-lg p-5 m-2" onSubmit={handleEvent}>
       <h1 className="font-bold">Review course</h1>
       <div className="grid grid-cols-2 gap-4">
         <div className="col-span-1">
           <label className="my-1" htmlFor="name">
             Name
+            <input
+              className="my-2 border-gray-400 w-full"
+              type="text"
+              id="name"
+              name="name"
+              required
+              value={anonymity ? "anomyous" : name}
+              onChange={(e) => { setName(e.target.value); }}
+            ></input>
           </label>
-          <input
-            className="my-2 border-gray-400 w-full"
-            type="text"
-            id="name"
-            name="name"
-          ></input>
         </div>
         <div className="col-span-1">
-          <label className="my-1">
-            Review Score
+          <label className="my-2">
+            <CourseScore onChange={(score: number) => setSelectedScore(score)} />
           </label>
-          <CourseScore />
         </div>
       </div>
-      <div className="grid grid-cols-2">
-        <label className="my-1" htmlFor="anon-post">
+      <div className="grid grid-cols-1">
+        <label className="my-1">
           Post anonymously
+          <input
+            className="my-2"
+            type="checkbox"
+            id="anon-post"
+            name="anon-post"
+            onChange={(e) => {setAnonymity(e.target.checked); 
+              e.target.checked ? setName("anonymous") : setName("")}
+            }
+          ></input>
         </label>
-        <input
-          className="my-2"
-          type="checkbox"
-          id="anon-post"
-          name="anon-post"
-        ></input>
       </div>
       <div className="grid grid-cols-2 gap-4">
         <div className="col-span-1">
           <label className="my-1" htmlFor="studyfield">
-            Select studyfield
-          </label> <br />
-          <select
-            value={currentStudyField}
-            onChange={(e) => {
-              setCurrentStudyField(StudyFieldOption[e.target.value as keyof typeof StudyFieldOption]);
-            }}>
-            {getEnumKeys(StudyFieldOption).map((key, index) => (
-              <option key={index} value={key}>
-                {StudyFieldOption[key]}
-              </option>
-            ))}
-          </select>
+            Select studyfield <br />
+            <select
+              value={currentStudyField}
+              onChange={(e) => {
+                setCurrentStudyField(StudyFieldOption[e.target.value as keyof typeof StudyFieldOption]);
+              }}>
+              {getEnumKeys(StudyFieldOption).map((key, index) => (
+                <option key={index} value={key}>
+                  {StudyFieldOption[key]}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
         <div className="col-span-1">
           <label className="my-2" htmlFor="years-study">
             Current year of study
+            <input
+              className="my-2 border-gray-400 w-full"
+              type="text"
+              id="years-study"
+              name="years-study"
+              required
+            ></input>
           </label>
-          <input
-            className="my-2 border-gray-400 w-full"
-            type="text"
-            id="years-study"
-            name="years-study"
-          ></input>
         </div>
       </div>
       <div className="grid my-1">
-        <label htmlFor="comment">Comment</label>
-        <input
-          className="border-gray-400"
-          type="text"
-          id="comment"
-          name="comment"
-        ></input>
+        <label htmlFor="comment">
+          Comment <br />
+          <input
+            className="border-gray-400"
+            type="text"
+            id="comment"
+            name="comment"
+          ></input>
+        </label>
       </div>
-      <button 
-        className="my-2 p-2"
-        onSubmit={(e) => {
-          // TODO: Implement submit review
-          console.log(e)
-        }}>
-        Submit review
-      </button>
-    </div>
+      <button type="submit" className="my-2 p-2">Submit review</button>
+    </form>
   );
 };
 
