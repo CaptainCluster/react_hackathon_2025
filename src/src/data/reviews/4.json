@@ -1,0 +1,14 @@
+[
+  {
+    "id": 3,
+    "name": "Anonymous",
+    "studyYear": 4,
+    "anonymity": true,
+    "feedbackTags": [
+      "Challenging"
+    ],
+    "stars": 4,
+    "comment": "Very informative but tough.",
+    "date": "2025-2-10"
+  }
+]
