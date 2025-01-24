@@ -12,7 +12,7 @@ const CourseResult = ({
   return (
     <NavLink to={`/course/${courseEntry.id}`}>
     <li
-      className="bg-white grid grid-cols-3 mb-3 p-3 border border-gray-300  my-1 hover:border-blue-300 cursor-pointer"
+      className="bg-white grid sm:grid-cols-3 gap-x-4 mb-3 p-3 border border-gray-300  my-1 hover:border-blue-300 cursor-pointer"
       key={index}
     >
       {numReviews > 0 ? (
@@ -21,9 +21,11 @@ const CourseResult = ({
           course={courseEntry}
         ></ReviewSummary>
       ) : (
-        <div>No reviews available</div>
+        <div className="flex justify-center">
+          <p className="">No reviews available</p>
+        </div>
       )}
-      <div className="grid justify-self-start px-3 core-course-info">
+      <div className="grid justify-self-start px-12 core-course-info">
         <p className="font-bold">{courseEntry.name} ({courseEntry.credits} ECTS) - {courseEntry.code}</p>
         <div>
           <p className="course-search-subject">
