@@ -21,8 +21,8 @@ const CourseResult = ({
           course={courseEntry}
         ></ReviewSummary>
       ) : (
-        <div className="flex justify-center">
-          <p className="">No reviews available</p>
+        <div className="flex justify-center bg-black w-[270px] align-middle p-2 rounded-lg">
+          <p className="m-auto font-bold text-white">No reviews available</p>
         </div>
       )}
       <div className="grid justify-self-start px-12 core-course-info">
