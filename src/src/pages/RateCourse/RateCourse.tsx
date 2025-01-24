@@ -22,15 +22,17 @@ const RateCourse = () => {
   if (data === undefined || "msg" in data) {
     return <span className="text-white">No data</span>;
   }
+  
   const courseData = data.data;
-  console.log("courseData:", courseData);
   
   if (courseData === undefined) {
     return <span className="text-white">No course</span>;
   }
+
   const numReviews = courseData.reviews.length;
+  
   return (
-    <div className="w-screen grid justify-center">
+    <div className="container">
       <div className="m-2">
         <NavLink to={`/course/${courseId}`}>
           <Button
