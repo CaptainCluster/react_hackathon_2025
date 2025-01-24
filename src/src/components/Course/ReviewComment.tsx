@@ -4,16 +4,10 @@ import { Avatar, Card, CardContent } from "@mui/joy/";
 /* Component for displaying the review of a course given by a user. 
 Component shows data defined in the Review-type 
 found in src\models\interfaces\Review.ts*/
-const ReviewComment = ({
-  reviewData,
-  index,
-}: {
-  reviewData: Review;
-  index: number;
-}) => {
+const ReviewComment = ({ reviewData }: { reviewData: Review }) => {
   return (
     <>
-      <div className="flex flex-col" key={index}>
+      <div className="flex flex-col">
         <div className="">
           <Card
             sx={{
@@ -28,8 +22,11 @@ const ReviewComment = ({
               <p className="font-bold text-sm text-white">{reviewData.name}</p>
               <div className="flex flex-row divide-x divide-white">
                 <p className="text-xs text-white pr-2">{`Study year: ${reviewData.studyYear}`}</p>
-                <p className="text-xs text-white pl-2">
+                <p className="text-xs text-white pr-2 pl-2">
                   {Array(reviewData.stars).fill("⭐").join("")}
+                </p>
+                <p className="text-xs text-white pl-2">
+                  {reviewData.studyField}
                 </p>
               </div>
             </CardContent>

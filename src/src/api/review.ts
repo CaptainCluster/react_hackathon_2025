@@ -5,14 +5,16 @@ import Course from "../models/interfaces/Course";
 
 const port: number = 3000;
 const ip: string = "http://localhost:" + port;
-const endpoint: string = ip+"/courses";
-export async function getReviews(CourseID: number): Promise<AxiosResponse<Review[]> | FailResponse> {
+const endpoint: string = ip + "/courses";
+export async function getReviews(
+  CourseID: number
+): Promise<AxiosResponse<Review[]> | FailResponse> {
   try {
-    const response = await axios.get<Course[]>(endpoint,
-      {params: {id: CourseID}}
-    );
-    const course: Course | undefined = response.data[0]
-    
+    const response = await axios.get<Course[]>(endpoint, {
+      params: { id: CourseID },
+    });
+    const course: Course | undefined = response.data[0];
+
     if (course === undefined) {
       return {
         msg: "Course not found",
@@ -29,17 +31,19 @@ export async function getReviews(CourseID: number): Promise<AxiosResponse<Review
     console.error(error);
     return {
       msg: "Failed to receive review information.",
-    }
+    };
   }
 }
 
-export async function getReviewAmount(CourseID: number): Promise<AxiosResponse<Number> | FailResponse> {
+export async function getReviewAmount(
+  CourseID: number
+): Promise<AxiosResponse<Number> | FailResponse> {
   try {
-    const response = await axios.get<Course[]>(endpoint,
-      {params: {id: CourseID}}
-    );
-    const course: Course | undefined = response.data[0]
-    
+    const response = await axios.get<Course[]>(endpoint, {
+      params: { id: CourseID },
+    });
+    const course: Course | undefined = response.data[0];
+
     if (course === undefined) {
       return {
         msg: "Course not found",
@@ -56,17 +60,20 @@ export async function getReviewAmount(CourseID: number): Promise<AxiosResponse<N
     console.error(error);
     return {
       msg: "Failed to receive review amount.",
-    }
+    };
   }
 }
 
-export async function addReview(CourseID: number, newReview: Review): Promise<AxiosResponse<Course> | FailResponse> {
+export async function addReview(
+  CourseID: number,
+  newReview: Review
+): Promise<AxiosResponse<Course> | FailResponse> {
   try {
-    const response = await axios.get<Course[]>(endpoint,
-      {params: {id: CourseID}}
-    );
-    const course: Course | undefined = response.data[0]
-    
+    const response = await axios.get<Course[]>(endpoint, {
+      params: { id: CourseID },
+    });
+    const course: Course | undefined = response.data[0];
+
     if (course === undefined) {
       return {
         msg: "Course not found",
@@ -76,12 +83,12 @@ export async function addReview(CourseID: number, newReview: Review): Promise<Ax
     // Cant be found????????
     course.reviews.push(newReview);
     const response2 = await axios.put<Course>(
-      endpoint + "/" +  CourseID,
+      endpoint + "/" + CourseID,
       course
     );
     return response2;
   } catch (error) {
-    console.error(error);
+    //console.error(error);
     return {
       msg: "Failed to add new review",
     } as FailResponse;

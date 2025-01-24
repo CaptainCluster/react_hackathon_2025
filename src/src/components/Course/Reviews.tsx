@@ -20,7 +20,7 @@ const Reviews = ({ courseId }: { courseId: string | undefined }) => {
     return <span className="text-black">No Reviews</span>;
   }
   const reviews: Review[] = data.data;
-  console.log("reviews:",reviews);
+  console.log("reviews:", reviews);
   return (
     <Card
       variant="plain"
@@ -30,7 +30,7 @@ const Reviews = ({ courseId }: { courseId: string | undefined }) => {
     >
       <div className="overflow-auto max-h-72 flex flex-col space-y-2 ">
         {reviews.map((reviewEntry, index) => (
-          <ReviewComment reviewData={reviewEntry} index={index} />
+          <ReviewComment key={index} reviewData={reviewEntry} />
         ))}
       </div>
     </Card>
