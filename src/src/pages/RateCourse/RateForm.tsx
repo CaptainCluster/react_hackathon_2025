@@ -13,7 +13,7 @@ import Course from "../../models/interfaces/Course";
 */
 const RateForm = ({courseData }: { courseData: Course; }) => {
   const reviewAmount = courseData.reviews.length;
-  const [currentStudyField, setCurrentStudyField] = useState<StudyFieldOption>();
+  const [currentStudyField, setCurrentStudyField] = useState<StudyFieldOption>(StudyFieldOption["software_eng"]);
   const [selectedScore, setSelectedScore] = useState<number>(0);
   const [anonymity, setAnonymity] = useState<boolean>(false);
   const [name, setName] = useState<string>("");
@@ -95,7 +95,7 @@ const RateForm = ({courseData }: { courseData: Course; }) => {
             <select
               value={currentStudyField}
               onChange={(e) => {
-                setCurrentStudyField(StudyFieldOption[e.target.value as keyof typeof StudyFieldOption]);
+                setCurrentStudyField(e.target.value as StudyFieldOption);
               }}>
               {getEnumKeys(StudyFieldOption).map((key, index) => (
                 <option key={index} value={key}>
