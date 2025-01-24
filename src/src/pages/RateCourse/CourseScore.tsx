@@ -5,6 +5,7 @@ interface CourseScoreProps {
 }
 const CourseScore: React.FC<CourseScoreProps> = ({ onChange }) => {
   const [selectedScore, setSelectedScore] = useState<number | null>(null);
+  const defaultClassAttributes: string = "h-[5vh] w-[10vw] sm:w-auto";
 
   const handleClick = (score: number) => {
     setSelectedScore(score);
@@ -18,7 +19,7 @@ const CourseScore: React.FC<CourseScoreProps> = ({ onChange }) => {
           key={score}
           type="button"
           onClick={() => handleClick(score)}
-          className={selectedScore === score ? 'bg-blue-500 text-white' : ''}
+          className={selectedScore === score ? `bg-blue-500 text-white ${defaultClassAttributes}` : defaultClassAttributes}
         >
           {score}
         </button>

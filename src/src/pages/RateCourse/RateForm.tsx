@@ -40,7 +40,6 @@ const RateForm = ({courseData }: { courseData: Course; }) => {
       date: new Date,
     }
 
-    console.log("review:",review)
     addReview(courseData.id, review)
       .then(response => {
         console.log('Review submitted successfully:', response);
@@ -51,7 +50,7 @@ const RateForm = ({courseData }: { courseData: Course; }) => {
   }
 
   return (
-    <form className="border border-gray-400 rounded-lg p-5 m-2" onSubmit={handleEvent}>
+    <form className="border border-gray-400 rounded-lg p-3 sm:p-5 m-2" onSubmit={handleEvent}>
       <h1 className="font-bold">Review course</h1>
       <div className="grid grid-cols-2 gap-4">
         <div className="col-span-1">
@@ -78,7 +77,7 @@ const RateForm = ({courseData }: { courseData: Course; }) => {
         <label className="my-1">
           Post anonymously
           <input
-            className="my-2"
+            className="m-2"
             type="checkbox"
             id="anon-post"
             name="anon-post"
@@ -93,6 +92,7 @@ const RateForm = ({courseData }: { courseData: Course; }) => {
           <label className="my-1" htmlFor="studyfield">
             Select studyfield <br />
             <select
+              className="w-[110%] sm:w-auto"
               value={currentStudyField}
               onChange={(e) => {
                 setCurrentStudyField(e.target.value as StudyFieldOption);
