@@ -29,22 +29,3 @@ input {
   border-radius: 8px;
   padding: 5px;
 }
-
-/* Custom Classes  */
-.course-search-subject {
-  font: italic;
-  font-size: 12px;
-}
-
-.course-search {
-  height: 130%;
-}
-
-.additional-info {
-  font-size: 12px;
-}
-
-.core-course-info {
-  margin-left: -20%;
-}
-

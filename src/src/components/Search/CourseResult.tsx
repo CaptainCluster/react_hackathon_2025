@@ -28,13 +28,13 @@ const CourseResult = ({
       <div className="grid sm:px-12 mt-5 sm:mt-0 sm:ml-[-20%]">
         <p className="font-bold">{courseEntry.name} ({courseEntry.credits} ECTS) - {courseEntry.code}</p>
         <div>
-          <p className="course-search-subject">
+          <p className="text-[12px]">
             Subject: {courseEntry.subject}
           </p>
-          <p className="course-search-subject">
+          <p className="text-[12px]">
             Language: {courseEntry.language}
           </p>
-          <p className="course-search-subject">Term: {courseEntry.term}</p>
+          <p className="text-[12px]">Term: {courseEntry.term}</p>
         </div>
       </div>
       <div className="flex w-fit mr-[15%] sm:mr-0 mt-5 sm:mt-0 border border-gray-500 rounded-lg p-2 bg-zinc-500 text-white font-bold justify-self-end">

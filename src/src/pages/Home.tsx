@@ -39,7 +39,7 @@ const Home = () => {
                 alt="LUT logo"
               />
               <input
-                className="input-form rounded-2xl course-search"
+                className="input-form rounded-2xl h-[120%]"
                 value={searchParam}
                 onChange={(event) => {
                   setSearchParam(event.target.value);
