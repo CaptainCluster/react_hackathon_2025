@@ -17,7 +17,7 @@ const ReviewSummary = ({
   const showReviews = numReviews > 0;
 
   return (
-    <>
+    <div className="ml-[12.5%] sm:ml-0">
       {showReviews ? (
         <Card
           sx={{
@@ -33,7 +33,7 @@ const ReviewSummary = ({
               sx={{ justifyContent: "center", alignItems: "center" }}
             >
               <div className="flex flex-row gap-1">
-                <p className="text-[44px] font-bold text-white">{avgScore}</p>
+                <p className="text-[32px] sm:text-[44px] font-bold text-white">{avgScore}</p>
                 <div className="p-2">
                   <StarBorderIcon
                     sx={{ color: "white", height: "40px", width: "40px" }}
@@ -41,7 +41,7 @@ const ReviewSummary = ({
                 </div>
               </div>
 
-              <p className="text-lg text-white">{numReviews} Reviews</p>
+              <p className="text-[14px] sm:text-[16px] text-lg text-white">{numReviews} Reviews</p>
             </Stack>
           </CardContent>
         </Card>
@@ -49,7 +49,7 @@ const ReviewSummary = ({
         // <div className="flex place-items-center">No reviews available</div>
         ""
       )}
-    </>
+    </div>
   );
 };
 
