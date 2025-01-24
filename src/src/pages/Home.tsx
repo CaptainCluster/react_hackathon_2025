@@ -28,7 +28,7 @@ const Home = () => {
 
   return (
     <>
-      <Header headerText="Rate my LUT courses"/>
+      <Header headerText="Rate my LUT courses" />
       <div className="flex justify-center">
         <div className="container">
           <div className="flex justify-center">

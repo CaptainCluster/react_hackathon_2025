@@ -33,7 +33,9 @@ const ReviewSummary = ({
               sx={{ justifyContent: "center", alignItems: "center" }}
             >
               <div className="flex flex-row gap-1">
-                <p className="text-[32px] sm:text-[44px] font-bold text-white">{avgScore}</p>
+                <p className="text-[32px] sm:text-[44px] font-bold text-white">
+                  {avgScore}
+                </p>
                 <div className="p-2">
                   <StarBorderIcon
                     sx={{ color: "white", height: "40px", width: "40px" }}
@@ -41,7 +43,9 @@ const ReviewSummary = ({
                 </div>
               </div>
 
-              <p className="text-[14px] sm:text-[16px] text-lg text-white">{numReviews} Reviews</p>
+              <p className="text-[14px] sm:text-[16px] text-lg text-white">
+                {numReviews} Reviews
+              </p>
             </Stack>
           </CardContent>
         </Card>
