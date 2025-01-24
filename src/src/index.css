@@ -21,11 +21,7 @@ button {
   padding: 2px;
   margin-left: 0.5vw;
   margin-right: 0.5vw;
-}
-
-button:hover {
-  border: 1px solid green;
-  background-color: rgb(194, 255, 211);
+  padding: 4px;
 }
 
 input {
