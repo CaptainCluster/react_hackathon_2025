@@ -6,6 +6,7 @@ import { useState } from "react";
 import { addReview } from "../../api/review";
 import { Review } from "../../models/interfaces/Review";
 import Course from "../../models/interfaces/Course";
+import FailResponse from "../../models/interfaces/response/FailResponse";
 
 /* TODO:
   - make the form look better
@@ -29,7 +30,7 @@ const RateForm = ({ courseData }: { courseData: Course }) => {
   }
 
   // function to handle the form submission
-  function handleEvent(e: React.FormEvent<HTMLFormElement>) {
+  async function handleEvent(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const formData = Object.fromEntries(form.entries());
@@ -47,15 +48,18 @@ const RateForm = ({ courseData }: { courseData: Course }) => {
       comment: formData["comment"] as string,
       date: new Date(),
     };
-    addReview(courseData.id, review)
-      .then((response) => {
-        alert("Review submitted successfully!");
-        console.log("Review submitted successfully:", response);
-      })
-      .catch((error) => {
-        alert("Error submitting review. Please try again.");
-        console.error("Error submitting review:", error);
-      });
+    const response = await addReview(courseData.id, review);
+    
+    // True if the response contains an error
+    if ("msg" in response) {
+      alert("Error submitting review. Please try again.");
+      console.error("Error submitting review.");
+      return;
+    }
+
+    // Upon successful review submission
+    alert("Review submitted successfully!");
+    console.log(`Review submitted successfully: ${response}`);
   }
 
   return (
