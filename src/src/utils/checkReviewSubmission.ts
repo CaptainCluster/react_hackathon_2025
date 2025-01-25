@@ -12,13 +12,13 @@ import { Review } from "../models/interfaces/Review";
 const checkReviewSubmission = (reviewSubmission: Review): boolean => {
   
   // Ensuring all necessary content is within a submission
-  if (!reviewSubmission.id === undefined
-    || !reviewSubmission.studyField === undefined
-    || !reviewSubmission.date === undefined
-    || !reviewSubmission.stars === undefined
-    || !reviewSubmission.name === undefined
-    || !reviewSubmission.comment === undefined
-    || !reviewSubmission.studyYear === undefined
+  if (reviewSubmission.id === undefined
+    || reviewSubmission.studyField === undefined
+    || reviewSubmission.date === undefined
+    || reviewSubmission.stars === undefined
+    || reviewSubmission.name === undefined
+    || reviewSubmission.comment === undefined
+    || reviewSubmission.studyYear === undefined
   ) {
     return false;
   }
@@ -32,7 +32,6 @@ const checkReviewSubmission = (reviewSubmission: Review): boolean => {
   if (reviewSubmission.stars <= 0 || reviewSubmission.stars > 5) {
     return false;
   }
-
   return true;
 }
 
