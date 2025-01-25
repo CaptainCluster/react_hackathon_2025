@@ -49,9 +49,11 @@ const RateForm = ({ courseData }: { courseData: Course }) => {
     };
     addReview(courseData.id, review)
       .then((response) => {
+        alert("Review submitted successfully!");
         console.log("Review submitted successfully:", response);
       })
       .catch((error) => {
+        alert("Error submitting review. Please try again.");
         console.error("Error submitting review:", error);
       });
   }

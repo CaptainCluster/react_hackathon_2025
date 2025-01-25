@@ -70,34 +70,29 @@ export async function getReviewAmount(
 export async function addReview(
   CourseID: number,
   newReview: Review
-): Promise<AxiosResponse<Course> | FailResponse> {
-  try {
-    const response = await axios.get<Course[]>(endpoint, {
-      params: { id: CourseID },
-    });
-    const course: Course | undefined = response.data[0];
+): Promise<AxiosResponse<Course>> {
+  const response = await axios.get<Course[]>(endpoint, {
+    params: { id: CourseID },
+  });
+  const course: Course | undefined = response.data[0];
 
-    if (course === undefined) {
-      return {
-        msg: "Course not found",
-      } as FailResponse;
-    }
-    
-    if (!checkReviewSubmission(newReview)) {
-      console.error("Either invalid data within review or the occurrence of an issue within the application.");
-    }
+  if (course === undefined) {
+    throw new Error("Course not found.");
+  }
+  
+  if (!checkReviewSubmission(newReview)) {
+    console.error("Either invalid data within review or the occurrence of an issue within the application.");
+  }
 
-    // Cant be found????????
-    course.reviews.push(newReview);
-    const response2 = await axios.put<Course>(
-      endpoint + "/" + CourseID,
-      course
-    );
+  // Cant be found????????
+  course.reviews.push(newReview);
+  const response2 = await axios.put<Course>(
+    endpoint + "/" + CourseID,
+    course
+  );
+  if (response2.status === 200) {
     return response2;
-  } catch (error) {
-    //console.error(error);
-    return {
-      msg: "Failed to add new review",
-    } as FailResponse;
+  } else {
+    throw new Error("Failed to add new review");
   }
 }
