@@ -32,6 +32,14 @@ const checkReviewSubmission = (reviewSubmission: Review): boolean => {
   if (reviewSubmission.stars <= 0 || reviewSubmission.stars > 5) {
     return false;
   }
+
+  if (reviewSubmission.anonymity && reviewSubmission.name !== "anonymous") {
+    return false;
+  }
+  if (reviewSubmission.studyYear !== "Graduated" && reviewSubmission.studyYear !== "Open university" && isNaN(reviewSubmission.studyYear)){
+    return false;
+  }
+
   return true;
 }
 

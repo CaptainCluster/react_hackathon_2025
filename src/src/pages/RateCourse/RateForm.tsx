@@ -69,7 +69,7 @@ const RateForm = ({ courseData }: { courseData: Course }) => {
               id="name"
               name="name"
               required
-              value={anonymity ? "anomyous" : name}
+              value={anonymity ? "anonymous" : name}
               onChange={(e) => {
                 setName(e.target.value);
               }}
