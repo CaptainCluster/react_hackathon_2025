@@ -4,8 +4,10 @@ import { Review } from "../models/interfaces/Review";
 import Course from "../models/interfaces/Course";
 
 const port: number = 3000;
-const ip: string = "http://localhost:" + port;
-const endpoint: string = ip + "/courses";
+const ip: string = `http://localhost:${port}`;
+const endpoint: string = `${ip}/courses`;
+
+
 export async function getReviews(
   CourseID: number
 ): Promise<AxiosResponse<Review[]> | FailResponse> {
