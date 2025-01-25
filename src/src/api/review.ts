@@ -70,7 +70,7 @@ export async function getReviewAmount(
 export async function addReview(
   CourseID: number,
   newReview: Review
-): Promise<AxiosResponse<Course>> {
+): Promise<AxiosResponse<Course> | FailResponse> {
   const response = await axios.get<Course[]>(endpoint, {
     params: { id: CourseID },
   });
@@ -82,6 +82,9 @@ export async function addReview(
   
   if (!checkReviewSubmission(newReview)) {
     console.error("Either invalid data within review or the occurrence of an issue within the application.");
+    return {
+      msg: "Failed to create a review."
+    };
   }
 
   // Cant be found????????
