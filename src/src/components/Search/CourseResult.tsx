@@ -5,7 +5,8 @@ const CourseResult = ({ courseEntry }: { courseEntry: Course }) => {
   const numReviews = courseEntry.reviews.length;
   return (
     <NavLink to={`/course/${courseEntry.id}`}>
-      <li className="bg-white grid sm:grid-cols-3 gap-x-4 mb-3 p-3 border border-gray-300 my-1 hover:border-blue-300 cursor-pointer">
+      <li className="bg-white  mb-3 p-3 border border-gray-300 my-1 hover:border-blue-300 ">
+        <div className="my-4 sm:my-0 grid sm:grid-cols-3 gap-x-4 cursor-pointer">
         {numReviews > 0 ? (
           <ReviewSummary
             numReviews={numReviews}
@@ -16,14 +17,15 @@ const CourseResult = ({ courseEntry }: { courseEntry: Course }) => {
             <p className="m-auto font-bold text-white">No reviews available</p>
           </div>
         )}
-        <div className="grid sm:px-12 mt-5 sm:mt-0 sm:ml-[-20%]">
-          <p className="font-bold">
-            {courseEntry.name} ({courseEntry.credits} ECTS) - {courseEntry.code}
-          </p>
-          <div>
-            <p className="text-[12px]">Subject: {courseEntry.subject}</p>
-            <p className="text-[12px]">Language: {courseEntry.language}</p>
-            <p className="text-[12px]">Term: {courseEntry.term}</p>
+          <div className="grid sm:px-12 mt-5 sm:mt-0 sm:ml-[-20%]">
+            <p className="font-bold">
+              {courseEntry.name} ({courseEntry.credits} ECTS) - {courseEntry.code}
+            </p>
+            <div>
+              <p className="text-[12px]">Subject: {courseEntry.subject}</p>
+              <p className="text-[12px]">Language: {courseEntry.language}</p>
+              <p className="text-[12px]">Term: {courseEntry.term}</p>
+            </div>
           </div>
         </div>
       </li>
