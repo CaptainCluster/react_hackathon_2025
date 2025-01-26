@@ -1,5 +1,6 @@
 import CourseScore from "./CourseScore";
 import { StudyFieldOption } from "../../models/enums/StudyFieldOption";
+import { StudyYearOption } from "../../models/enums/StudyYearOption";
 // import { FeedbackTags } from "../../models/enums/FeedbackTags";
 // This should be added if you wanna find a fun way to add many tags
 import { useState } from "react";
@@ -22,9 +23,12 @@ import {
 */
 const RateForm = ({ courseData }: { courseData: Course }) => {
   const reviewAmount = courseData.reviews.length;
-  const [currentStudyField, setCurrentStudyField] = useState<StudyFieldOption>(
-    StudyFieldOption["softwareEng"]
-  );
+  const [currentStudyField, setCurrentStudyField] = useState<
+    StudyFieldOption | undefined
+  >(undefined);
+  const [currentStudyStage, setCurrentStudyStage] = useState<
+    StudyYearOption | undefined
+  >(undefined);
   const [selectedScore, setSelectedScore] = useState<number>(0);
   const [anonymity, setAnonymity] = useState<boolean>(false);
   const [name, setName] = useState<string>("");
@@ -43,13 +47,21 @@ const RateForm = ({ courseData }: { courseData: Course }) => {
     const form = new FormData(e.currentTarget);
     const formData = Object.fromEntries(form.entries());
 
+    // Study stage or study field can not be undefined in review
+    if (currentStudyStage === undefined) {
+      return;
+    }
+    if (currentStudyField === undefined) {
+      return;
+    }
+
     const review: Review = {
       id: Number(reviewAmount) + 1,
       name:
         formData["anon-post"] === "on"
           ? "anonymous"
           : (formData["name"] as string),
-      studyYear: Number(formData["years-study"]),
+      studyYear: currentStudyStage,
       studyField: currentStudyField,
       anonymity: formData["anon-post"] === "on",
       stars: Number(selectedScore),
@@ -57,7 +69,6 @@ const RateForm = ({ courseData }: { courseData: Course }) => {
       date: new Date(),
     };
 
-    console.log("review:", review);
     addReview(courseData.id, review)
       .then((response) => {
         console.log("Review submitted successfully:", response);
@@ -72,62 +83,67 @@ const RateForm = ({ courseData }: { courseData: Course }) => {
       className="mt-3"
       variant="plain"
       sx={{
-        bgcolor: "var(--darkGray)",
+        bgcolor: "#e3e3e3",
       }}
     >
       <form onSubmit={handleEvent}>
-        <h1 className="font-bold text-3xl text-white">Review course</h1>
+        <h1 className="font-bold text-3xl text-black">Review course</h1>
         <div className="grid grid-cols-2 gap-4">
           <div className="col-span-1">
-            <label className="my-1 text-black" htmlFor="name">
+            <label className="my-1 font-semibold text-black" htmlFor="name">
               Name
               <Input
                 placeholder="Name"
-                className="my-2 border-gray-400 w-full"
+                className="my-2 w-full"
                 type="text"
                 id="name"
                 name="name"
                 required
-                value={anonymity ? "anomyous" : name}
+                value={anonymity ? "anonymous" : name}
                 onChange={(e) => {
                   setName(e.target.value);
                 }}
-              />
+              />{" "}
+              <div className="grid grid-cols-1">
+                <Checkbox
+                  label="Post anonymously"
+                  id="anon-post"
+                  name="anon-post"
+                  onChange={(e) => (
+                    setAnonymity(e.target.checked),
+                    e.target.checked ? setName("anonymous") : setName("")
+                  )}
+                />
+              </div>
             </label>
           </div>
           <div className="col-span-1">
-            <label className="my-2">
+            <p className="my-2 font-semibold">
+              Give rating (1 as worst and 5 as best)
               <CourseScore
-                onChange={(score: number) => setSelectedScore(score)}
+                setSelectedScore={(score: number) => setSelectedScore(score)}
               />
-            </label>
+            </p>
           </div>
         </div>
-        <div className="grid grid-cols-1">
-          <Checkbox
-            label="Post anonymously"
-            id="anon-post"
-            name="anon-post"
-            onChange={(e) => (
-              setAnonymity(e.target.checked),
-              e.target.checked ? setName("anonymous") : setName("")
-            )}
-          />
-        </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 my-4">
           <div className="col-span-1">
-            <label className="my-1 text-black" htmlFor="studyfield">
+            <label
+              className="my-1 font-semibold text-black"
+              htmlFor="studyfield"
+            >
               Select studyfield <br />
               <Select
+                sx={{ mt: 1 }}
                 placeholder="Select a studyfield"
                 required
-                value={currentStudyField}
+                value={currentStudyField || ""}
                 onChange={(_, newValue: string | null) => {
                   setCurrentStudyField(newValue as StudyFieldOption);
                 }}
               >
-                {getEnumKeys(StudyFieldOption).map((key, index) => (
-                  <Option key={index} value={key}>
+                {getEnumKeys(StudyFieldOption).map((key) => (
+                  <Option key={key} value={StudyFieldOption[key]}>
                     {StudyFieldOption[key]}
                   </Option>
                 ))}
@@ -135,24 +151,36 @@ const RateForm = ({ courseData }: { courseData: Course }) => {
             </label>
           </div>
           <div className="col-span-1">
-            <label className="my-2 text-black" htmlFor="years-study">
-              Current year of study
-              <Input
-                className="my-2 border-gray-400 w-full"
-                type="text"
-                id="years-study"
-                name="years-study"
+            <label
+              className="my-2 font-semibold text-black"
+              htmlFor="study-stage"
+            >
+              Current stage of studies
+              <Select
+                sx={{ mt: 1 }}
+                placeholder="Select stage"
                 required
-                placeholder="Study year as numbers"
-              />
+                value={currentStudyStage || ""}
+                onChange={(_, newValue: string | null) => {
+                  setCurrentStudyStage(newValue as StudyYearOption);
+                }}
+              >
+                {getEnumKeys(StudyYearOption).map((key) => (
+                  <Option key={key} value={StudyYearOption[key]}>
+                    {StudyYearOption[key]}
+                  </Option>
+                ))}
+              </Select>
             </label>
           </div>
         </div>
         <div className="grid my-1">
-          <label className="text-black" htmlFor="comment">
+          <label className="text-black font-semibold" htmlFor="comment">
             Comment <br />
             <Textarea
-              className="border-gray-400"
+              required
+              sx={{ mt: 1 }}
+              className=""
               id="comment"
               name="comment"
               placeholder="Share your thoughts about the course with others"
@@ -161,9 +189,10 @@ const RateForm = ({ courseData }: { courseData: Course }) => {
         </div>
         <Button
           type="submit"
-          className="my-10 p-2"
+          className=""
           size="lg"
           sx={{
+            mt: 2,
             bgcolor: "#2C2C2C",
             ":hover": {
               bgcolor: "#3f3f3f",

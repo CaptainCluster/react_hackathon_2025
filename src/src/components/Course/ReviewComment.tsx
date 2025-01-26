@@ -21,7 +21,7 @@ const ReviewComment = ({ reviewData }: { reviewData: Review }) => {
             <CardContent>
               <p className="font-bold text-sm text-white">{reviewData.name}</p>
               <div className="flex flex-row divide-x divide-white">
-                <p className="text-xs text-white pr-2">{`Study year: ${reviewData.studyYear}`}</p>
+                <p className="text-xs text-white pr-2">{`Study level: ${reviewData.studyYear}`}</p>
                 <p className="text-xs text-white pr-2 pl-2">
                   {Array(reviewData.stars).fill("⭐").join("")}
                 </p>

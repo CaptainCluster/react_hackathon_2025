@@ -2,10 +2,13 @@ import axios, { AxiosResponse } from "axios";
 import FailResponse from "../models/interfaces/response/FailResponse";
 import { Review } from "../models/interfaces/Review";
 import Course from "../models/interfaces/Course";
+import checkReviewSubmission from "../utils/checkReviewSubmission";
 
 const port: number = 3000;
-const ip: string = "http://localhost:" + port;
-const endpoint: string = ip + "/courses";
+const ip: string = `http://localhost:${port}`;
+const endpoint: string = `${ip}/courses`;
+
+
 export async function getReviews(
   CourseID: number
 ): Promise<AxiosResponse<Review[]> | FailResponse> {
@@ -78,6 +81,10 @@ export async function addReview(
       return {
         msg: "Course not found",
       } as FailResponse;
+    }
+    
+    if (!checkReviewSubmission(newReview)) {
+      console.error("Either invalid data within review or the occurrence of an issue within the application.");
     }
 
     // Cant be found????????

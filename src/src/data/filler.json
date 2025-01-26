@@ -13,7 +13,7 @@
         {
           "id": 1,
           "name": "Anonymous",
-          "studyYear": 3,
+          "studyYear": "Bachelor",
           "studyField": "Software engineering",
           "anonymity": true,
           "feedbackTags": [],
@@ -24,7 +24,7 @@
         {
           "id": 2,
           "name": "Anonymous",
-          "studyYear": 2,
+          "studyYear": "Bachelor",
           "studyField": "Software engineering",
           "anonymity": true,
           "feedbackTags": [
@@ -37,7 +37,7 @@
         {
           "id": 3,
           "name": "John Smith",
-          "studyYear": 4,
+          "studyYear": "Master",
           "studyField": "Software engineering",
           "anonymity": false,
           "feedbackTags": [
@@ -50,7 +50,7 @@
         {
           "id": 4,
           "name": "Jane Roe",
-          "studyYear": 3,
+          "studyYear": "Bachelor",
           "studyField": "Software engineering",
           "anonymity": false,
           "feedbackTags": [
@@ -63,7 +63,7 @@
         {
           "id": 5,
           "name": "Anonymous",
-          "studyYear": 1,
+          "studyYear": "Bachelor",
           "studyField": "Software engineering",
           "anonymity": true,
           "feedbackTags": [
@@ -76,7 +76,7 @@
         {
           "id": 6,
           "name": "Anonymous",
-          "studyYear": 3,
+          "studyYear": "Bachelor",
           "studyField": "Computational engineering",
           "anonymity": true,
           "feedbackTags": [],
@@ -87,7 +87,7 @@
         {
           "id": 7,
           "name": "Anonymous",
-          "studyYear": 2,
+          "studyYear": "Bachelor",
           "studyField": "Software engineering",
           "anonymity": true,
           "feedbackTags": [
@@ -100,7 +100,7 @@
         {
           "id": 8,
           "name": "John Smith",
-          "studyYear": 4,
+          "studyYear": "Master",
           "studyField": "Computational engineering",
           "anonymity": false,
           "feedbackTags": [
@@ -113,7 +113,7 @@
         {
           "id": 9,
           "name": "Jane Roe",
-          "studyYear": 3,
+          "studyYear": "Bachelor",
           "studyField": "Software engineering",
           "anonymity": false,
           "feedbackTags": [
@@ -126,7 +126,7 @@
         {
           "id": 10,
           "name": "Anonymous",
-          "studyYear": 1,
+          "studyYear": "Bachelor",
           "studyField": "Computational engineering",
           "anonymity": true,
           "feedbackTags": [
@@ -135,6 +135,16 @@
           "stars": 1,
           "comment": "Boring and not useful.",
           "date": "2021-8-30"
+        },
+        {
+          "id": 11,
+          "name": "test",
+          "studyYear": "Graduated",
+          "studyField": "Business",
+          "anonymity": false,
+          "stars": 3,
+          "comment": "test",
+          "date": "2025-01-26T14:25:05.065Z"
         }
       ]
     },
@@ -151,7 +161,7 @@
         {
           "id": 1,
           "name": "Anonymous",
-          "studyYear": 3,
+          "studyYear": "Bachelor",
           "studyField": "Software engineering",
           "anonymity": true,
           "feedbackTags": [],
@@ -162,7 +172,7 @@
         {
           "id": 2,
           "name": "Alice Johnson",
-          "studyYear": 2,
+          "studyYear": "Bachelor",
           "studyField": "Software engineering",
           "anonymity": false,
           "feedbackTags": [
@@ -175,7 +185,7 @@
         {
           "id": 3,
           "name": "Anonymous",
-          "studyYear": 1,
+          "studyYear": "Bachelor",
           "studyField": "Software engineering",
           "anonymity": true,
           "feedbackTags": [
@@ -188,7 +198,7 @@
         {
           "id": 4,
           "name": "Bob Brown",
-          "studyYear": 3,
+          "studyYear": "Bachelor",
           "studyField": "Computational engineering",
           "anonymity": false,
           "feedbackTags": [
@@ -201,7 +211,7 @@
         {
           "id": 5,
           "name": "Anonymous",
-          "studyYear": 4,
+          "studyYear": "Master",
           "studyField": "Computational engineering",
           "anonymity": true,
           "feedbackTags": [
@@ -227,7 +237,7 @@
           "id": 1,
           "stars": 5,
           "name": "Sally Loe",
-          "studyYear": 2,
+          "studyYear": "Bachelor",
           "studyField": "Industrial engineering and management",
           "anonymity": false,
           "feedbackTags": [
@@ -240,7 +250,7 @@
           "id": 3,
           "stars": 4,
           "name": "Anonymous",
-          "studyYear": 3,
+          "studyYear": "Bachelor",
           "studyField": "Software engineering",
           "anonymity": true,
           "feedbackTags": [
@@ -252,7 +262,7 @@
           "id": 4,
           "stars": 5,
           "name": "Anonymous",
-          "studyYear": 4,
+          "studyYear": "Master",
           "studyField": "Software engineering",
           "anonymity": true,
           "feedbackTags": [
@@ -264,7 +274,7 @@
           "id": 5,
           "stars": 3,
           "name": "Anonymous",
-          "studyYear": 2,
+          "studyYear": "Bachelor",
           "studyField": "Business",
           "anonymity": true,
           "feedbackTags": [
@@ -276,7 +286,7 @@
           "id": 6,
           "stars": 4,
           "name": "Anonymous",
-          "studyYear": 3,
+          "studyYear": "Bachelor",
           "studyField": "Software engineering",
           "anonymity": true,
           "feedbackTags": [
@@ -288,7 +298,7 @@
           "id": 7,
           "stars": 5,
           "name": "Anonymous",
-          "studyYear": 4,
+          "studyYear": "Master",
           "studyField": "Software engineering",
           "anonymity": true,
           "feedbackTags": [
@@ -300,7 +310,7 @@
           "id": 8,
           "stars": 4,
           "name": "Anonymous",
-          "studyYear": 2,
+          "studyYear": "Bachelor",
           "studyField": "Software engineering",
           "anonymity": true,
           "feedbackTags": [
@@ -312,7 +322,7 @@
           "id": 9,
           "stars": 5,
           "name": "Anonymous",
-          "studyYear": 3,
+          "studyYear": "Bachelor",
           "studyField": "Mechanical engineering",
           "anonymity": true,
           "feedbackTags": [
@@ -324,13 +334,23 @@
           "id": 10,
           "stars": 5,
           "name": "Anonymous",
-          "studyYear": 4,
+          "studyYear": "Master",
           "studyField": "Energy technology",
           "anonymity": true,
           "feedbackTags": [
             "Engaging"
           ],
           "comment": "Great course for mobile enthusiasts."
+        },
+        {
+          "id": 10,
+          "name": "Brian Kottarainen",
+          "studyYear": "Bachelor",
+          "studyField": "Electrical engineering",
+          "anonymity": false,
+          "stars": 4,
+          "comment": "It was challenging but learnt a lot",
+          "date": "2025-01-25T15:36:27.380Z"
         }
       ]
     },
@@ -347,7 +367,7 @@
         {
           "id": 3,
           "name": "Anonymous",
-          "studyYear": 4,
+          "studyYear": "Master",
           "studyField": "Software engineering",
           "anonymity": true,
           "feedbackTags": [
@@ -360,7 +380,7 @@
         {
           "id": 2,
           "name": "anonymous",
-          "studyYear": 1,
+          "studyYear": "Graduated",
           "studyField": "Software engineering",
           "anonymity": true,
           "stars": 5,
@@ -370,12 +390,42 @@
         {
           "id": 3,
           "name": "anonymous",
-          "studyYear": 1,
+          "studyYear": "Bachelor",
           "studyField": "Software engineering",
           "anonymity": true,
           "stars": 5,
           "comment": "good",
           "date": "2025-01-24T11:52:26.252Z"
+        },
+        {
+          "id": 4,
+          "name": "anonymous",
+          "studyYear": "Master",
+          "studyField": "Industrial engineering and management",
+          "anonymity": false,
+          "stars": 4,
+          "comment": "Interesting and good lecturer",
+          "date": "2025-01-25T15:30:51.090Z"
+        },
+        {
+          "id": 5,
+          "name": "anonymous",
+          "studyYear": "Graduated",
+          "studyField": "Industrial engineering and management",
+          "anonymity": false,
+          "stars": 5,
+          "comment": "",
+          "date": "2025-01-25T15:31:54.292Z"
+        },
+        {
+          "id": 5,
+          "name": "anonymous",
+          "studyYear": "Graduated",
+          "studyField": "Industrial engineering and management",
+          "anonymity": false,
+          "stars": 5,
+          "comment": "Loved it!",
+          "date": "2025-01-25T15:35:25.027Z"
         }
       ]
     },
@@ -392,7 +442,7 @@
         {
           "id": 4,
           "name": "Anonymous",
-          "studyYear": 3,
+          "studyYear": "Bachelor",
           "studyField": "Software engineering",
           "anonymity": true,
           "feedbackTags": [
@@ -406,7 +456,7 @@
           "id": 2,
           "stars": 5,
           "name": "Sally Loe",
-          "studyYear": 2,
+          "studyYear": "Bachelor",
           "studyField": "Computational engineering",
           "anonymity": false,
           "feedbackTags": [
@@ -418,7 +468,7 @@
         {
           "id": 3,
           "name": "Anonymous",
-          "studyYear": 1,
+          "studyYear": "Bachelor",
           "studyField": "Computational engineering",
           "anonymity": true,
           "feedbackTags": [
@@ -431,7 +481,7 @@
         {
           "id": 4,
           "name": "Charlie Green",
-          "studyYear": 2,
+          "studyYear": "Bachelor",
           "studyField": "Software engineering",
           "anonymity": false,
           "feedbackTags": [
@@ -444,7 +494,7 @@
         {
           "id": 5,
           "name": "Tom",
-          "studyYear": 3,
+          "studyYear": "Graduated",
           "studyField": "softwareEng",
           "anonymity": false,
           "stars": 4,
@@ -466,7 +516,7 @@
         {
           "id": 1,
           "name": "Anonymous",
-          "studyYear": 2,
+          "studyYear": "Bachelor",
           "studyField": "Computational engineering",
           "anonymity": true,
           "feedbackTags": [
@@ -479,7 +529,7 @@
         {
           "id": 2,
           "name": "Anonymous",
-          "studyYear": 3,
+          "studyYear": "Bachelor",
           "studyField": "Computational engineering",
           "anonymity": true,
           "feedbackTags": [
@@ -492,7 +542,7 @@
         {
           "id": 3,
           "name": "John Smith",
-          "studyYear": 4,
+          "studyYear": "Master",
           "studyField": "Computational engineering",
           "anonymity": false,
           "feedbackTags": [
@@ -505,7 +555,7 @@
         {
           "id": 4,
           "name": "Jane Roe",
-          "studyYear": 3,
+          "studyYear": "Open University",
           "studyField": "Computational engineering",
           "anonymity": false,
           "feedbackTags": [
@@ -518,7 +568,7 @@
         {
           "id": 5,
           "name": "Anonymous",
-          "studyYear": 1,
+          "studyYear": "Bachelor",
           "studyField": "Computational engineering",
           "anonymity": true,
           "feedbackTags": [

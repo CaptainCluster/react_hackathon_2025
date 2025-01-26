@@ -1,29 +1,44 @@
-import React, { useState } from 'react';
+import { Button, ToggleButtonGroup } from "@mui/joy";
+import { useState } from "react";
 
 interface CourseScoreProps {
-  onChange: (score: number) => void;
+  setSelectedScore: (score: number) => void;
 }
-const CourseScore: React.FC<CourseScoreProps> = ({ onChange }) => {
-  const [selectedScore, setSelectedScore] = useState<number | null>(null);
-  const defaultClassAttributes: string = "h-[5vh] w-[10vw] sm:w-auto";
-
-  const handleClick = (score: number) => {
-    setSelectedScore(score);
-    onChange(score)
-  };
+const CourseScore: React.FC<CourseScoreProps> = ({ setSelectedScore }) => {
+  const [value, setValue] = useState<string | null>();
 
   return (
-    <div className="border border-gray-200 rounded-lg p-2 w-fit">
-      {[1, 2, 3, 4, 5].map((score) => (
-        <button
-          key={score}
-          type="button"
-          onClick={() => handleClick(score)}
-          className={selectedScore === score ? `bg-blue-500 text-white ${defaultClassAttributes}` : defaultClassAttributes}
-        >
-          {score}
-        </button>
-      ))}
+    <div className="rounded-lg p-2 w-fit">
+      <ToggleButtonGroup
+        value={value}
+        onChange={(event, newValue) => {
+          if (!newValue) {
+            return;
+          }
+          setValue(newValue);
+          setSelectedScore(parseInt(newValue));
+        }}
+      >
+        {new Array(5).fill(undefined).map((_, index) => {
+          const rating = index + 1;
+          return (
+            <Button
+              sx={{
+                padding: {
+                  xs: "4px 8px",
+                  sm: "6px 12px",
+                  md: "8px 16px",
+                },
+              }}
+              variant="solid"
+              key={rating}
+              value={rating}
+            >
+              {rating}
+            </Button>
+          );
+        })}
+      </ToggleButtonGroup>
     </div>
   );
 };
