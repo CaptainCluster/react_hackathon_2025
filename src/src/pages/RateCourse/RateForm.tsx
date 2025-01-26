@@ -16,9 +16,9 @@ import {
   Select,
   Textarea,
 } from "@mui/joy";
+import FailResponse from "../../models/interfaces/response/FailResponse";
 
 /* TODO:
-  - make the form look better
   - add FeedbackTags to the form
 */
 const RateForm = ({ courseData }: { courseData: Course }) => {
@@ -42,7 +42,7 @@ const RateForm = ({ courseData }: { courseData: Course }) => {
   }
 
   // function to handle the form submission
-  function handleEvent(e: React.FormEvent<HTMLFormElement>) {
+  async function handleEvent(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const formData = Object.fromEntries(form.entries());
@@ -69,13 +69,18 @@ const RateForm = ({ courseData }: { courseData: Course }) => {
       date: new Date(),
     };
 
-    addReview(courseData.id, review)
-      .then((response) => {
-        console.log("Review submitted successfully:", response);
-      })
-      .catch((error) => {
-        console.error("Error submitting review:", error);
-      });
+    const response = await addReview(courseData.id, review);
+    
+    // True if the response contains an error
+    if ("msg" in response) {
+      alert("Error submitting review. Please try again.");
+      console.error("Error submitting review.");
+      return;
+    }
+
+    // Upon successful review submission
+    alert("Review submitted successfully!");
+    console.log(`Review submitted successfully: ${response}`);
   }
 
   return (
