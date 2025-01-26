@@ -70,7 +70,7 @@ const RateForm = ({ courseData }: { courseData: Course }) => {
     };
 
     const response = await addReview(courseData.id, review);
-    
+
     // True if the response contains an error
     if ("msg" in response) {
       alert("Error submitting review. Please try again.");
@@ -123,12 +123,14 @@ const RateForm = ({ courseData }: { courseData: Course }) => {
             </label>
           </div>
           <div className="col-span-1">
-            <p className="my-2 font-semibold">
-              Give rating (1 as worst and 5 as best)
+            <div>
+              <p className="my-2 font-semibold">
+                Give rating (1 as worst and 5 as best)
+              </p>
               <CourseScore
                 setSelectedScore={(score: number) => setSelectedScore(score)}
               />
-            </p>
+            </div>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4 my-4">

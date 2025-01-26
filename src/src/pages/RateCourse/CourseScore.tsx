@@ -5,7 +5,7 @@ interface CourseScoreProps {
   setSelectedScore: (score: number) => void;
 }
 const CourseScore: React.FC<CourseScoreProps> = ({ setSelectedScore }) => {
-  const [value, setValue] = useState<string | null>();
+  const [value, setValue] = useState<string | null>(null);
 
   return (
     <div className="rounded-lg p-2 w-fit">
@@ -16,11 +16,11 @@ const CourseScore: React.FC<CourseScoreProps> = ({ setSelectedScore }) => {
             return;
           }
           setValue(newValue);
-          setSelectedScore(parseInt(newValue));
+          setSelectedScore(parseInt(newValue, 10));
         }}
       >
         {new Array(5).fill(undefined).map((_, index) => {
-          const rating = index + 1;
+          const rating = (index + 1).toString();
           return (
             <Button
               sx={{
