@@ -9,7 +9,6 @@ const CourseSearchResults = ({ courseData }: { courseData: Course[] }) => {
         <h1 className="bg-zinc-700 text-white font-bold text-[12px] sm:text-[16px] px-3 sm:px-5 py-4 my-auto w-1/2">
           Browse all course reviews:{" "}
         </h1>
-        <SearchFilter />
       </div>
       <ul className="mt-4 p-2">
         {courseData.map((courseEntry, index) => (
