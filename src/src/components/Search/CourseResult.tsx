@@ -19,7 +19,7 @@ const CourseResult = ({ courseEntry }: { courseEntry: Course }) => {
         )}
           <div className="grid sm:px-12 mt-5 sm:mt-0 sm:ml-[-20%]">
             <p className="font-bold">
-              {courseEntry.name} ({courseEntry.credits} ECTS) - {courseEntry.code}
+              {courseEntry.name} ({courseEntry.credits} ECTS) { courseEntry.code !== undefined ? `- ${courseEntry.code}` : "" }
             </p>
             <div>
               <p className="text-[12px]">Subject: {courseEntry.subject}</p>
