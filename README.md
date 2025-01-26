@@ -1,6 +1,6 @@
 # React Hackathon 2025
 
-This GitHub repository is for the 2025 React/Figma hackathon hosted by *LUT University* and *TwoDay*. The application made 
+This GitHub repository is for the 2025 React/Figma hackathon hosted by *LUT University* and *TwoDay*. The created application 
 is the client-side of an academic course review system. 
 
 ## Technology
@@ -15,3 +15,5 @@ Due to the hackathon only covering the client-side, the necessary API functional
 The front-end library used is **React** with **TypeScript**. The application utilizes **pnpm** and **Vite**. For styling,
 both **MUI** and **Tailwind CSS** were used. The client-side API requests were made with **Axios** and **React Query** was
 used to help render correctly received data and handle exceptions.
+
+![image](https://github.com/user-attachments/assets/9ff6f22c-4d2b-4744-a3a8-c8f2aeb14f57)
