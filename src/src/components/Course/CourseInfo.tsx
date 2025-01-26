@@ -26,7 +26,7 @@ const CourseInfo = ({
               alignItems: "flex-start",
             }}
           >
-            <h1 className="font-bold text-xl sm:text-2xl ">{course.name}</h1>
+            <h1 className="font-bold text-[18px] sm:text-2xl w-1/2 sm:w-auto">{course.name}</h1>
             <div>
               <p className="text-sm">Duration</p>
               <p className="font-bold text-base">{course.duration}</p>
